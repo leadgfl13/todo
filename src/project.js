@@ -2,15 +2,37 @@
 
 let projects = []
 
+
+
+//generate the layout for the page
+let pageLayout =(()=>{
+    let page = document.createElement('div')
+    page.setAttribute('id','pagelayout')
+    body. append(page)
+    let topleft = document.createElement('div')
+    topleft.setAttribute('id', 'topleft')
+   let topright = document.createElement('div')
+    topright.setAttribute('id', 'topright')
+   let bottomleft = document.createElement('div')
+    bottomleft.setAttribute('id', 'bottomleft')
+   let bottomright = document.createElement('div')
+    bottomright.setAttribute('id', 'bottomright')
+    page.append(topleft,topright,bottomleft,bottomright)
+})();
+export{pageLayout}
+
+
+
+// button for calling the project factory and displaying it
 let projectbutton = (function makeproj(){
     const getProject = document.getElementById('makeproject')
     getProject.addEventListener('click',()=>{
         let pName = prompt("What is your project name")
         let currentp = makeProject(pName)
        projects.push(currentp)
-       display()
-   
-    })
+        projectVis()
+    }
+    )
 })()
 export{projectbutton}
 
@@ -52,11 +74,24 @@ export{makeToDo}
 function display(){
     for(let i =0; i<projects.length; i++){
         console.log(projects[i])
-
+        projectVis(projects[i])
     }
 
 }
 export{display}
+
+
+
+//function to create project visual
+function projectVis(){
+    clearProjects()
+    for(let i =0; i<projects.length; i++){
+        console.log(projects[i])
+        let display = document.createElement('div')
+        display.setAttribute('id', 'project')
+        let bottomright = document.getElementById('bottomright')
+        bottomright.append(display)
+}}
 
 
 
@@ -74,6 +109,12 @@ let testing = (function subtodo(){
     
      })
 })()
+
+function clearProjects(){
+    let bottomright = document.getElementById('bottomright')
+    bottomright.innerHTML = ''
+}
+
 
 export{testing}
 // Need a factory function for toDo

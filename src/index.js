@@ -4,6 +4,7 @@ import{makeProject} from "./project"
 import {testing} from "./project"
 import{display} from "./project"
 import{projectbutton} from "./project"
+import { pageLayout } from './project'
 
 
 
@@ -20,13 +21,4 @@ let testproject = makeProject('testproject')
 
 
 
-let layout = function(){
-  
-    let page = document.createElement('div')
-    page.setAttribute('id','pagelayout')
-    body.append(page)
-}
-
-layout()
-
-export{layout}
+pageLayout
