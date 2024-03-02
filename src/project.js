@@ -32,9 +32,10 @@ let projectbutton = (function makeproj(){
        projects.push(currentp)
         projectVis()
     }
-    )
+)
 })()
 export{projectbutton}
+
 
 //factory function for making projects
 function makeProject(projectname){
@@ -75,8 +76,8 @@ function display(){
     for(let i =0; i<projects.length; i++){
         console.log(projects[i])
         projectVis(projects[i])
+        todoVis()
     }
-
 }
 export{display}
 
@@ -86,11 +87,26 @@ export{display}
 function projectVis(){
     clearProjects()
     for(let i =0; i<projects.length; i++){
-        console.log(projects[i])
         let display = document.createElement('div')
+        let todobutton = document.createElement('button')
+        todobutton.innerHTML = 'Add todo'
+        todobutton.addEventListener('click',()=>{
+            let title = prompt("Title?")
+            let desc = prompt("Description?")
+            let date = prompt("date")
+            let priority = prompt ("priority")
+            let todo = makeToDo(title,desc, date, priority )
+            projects[i].thing.push(todo)
+            let check = projects[i].thing
+            console.log(check)
+
+        })
+        
+        todobutton.setAttribute = ('id', 'todobutton')
         display.setAttribute('id', 'project')
         let bottomright = document.getElementById('bottomright')
         bottomright.append(display)
+        display.append(todobutton)
 }}
 
 
@@ -109,6 +125,7 @@ let testing = (function subtodo(){
     
      })
 })()
+
 
 function clearProjects(){
     let bottomright = document.getElementById('bottomright')
