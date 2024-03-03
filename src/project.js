@@ -53,6 +53,10 @@ export{makeProject}
 
 
 
+
+
+
+
 // factory function to make to-do's
 function makeToDo(title, description, duedate, priority){
     return{
@@ -71,6 +75,8 @@ function makeToDo(title, description, duedate, priority){
 export{makeToDo}
 
 
+
+
 // function to display the projects
 function display(){
     for(let i =0; i<projects.length; i++){
@@ -80,6 +86,8 @@ function display(){
     }
 }
 export{display}
+
+
 
 
 
@@ -111,6 +119,8 @@ function projectVis(){
 
 
 
+
+
 let testing = (function subtodo(){
      const getData = document.getElementById('subtodo')
      let name = document.getElementById('name')
@@ -125,6 +135,9 @@ let testing = (function subtodo(){
     
      })
 })()
+export{testing}
+
+
 
 
 function clearProjects(){
@@ -132,8 +145,6 @@ function clearProjects(){
     bottomright.innerHTML = ''
 }
 
-
-export{testing}
 // Need a factory function for toDo
 
 // Need a function that takes Todo's and then assigns them to a project?

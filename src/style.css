@@ -18,5 +18,19 @@ body{
 }
 
 #bottomright{
+    display:flex;
+    flex-direction:row;
+    gap:20px;
 
+}
+
+#todoform{
+    display:flex;
+    height:300px;
+    width:300px;
+    border:solid 2px green;
+    background-color:cyan;
+    position:absolute;
+    top:40%;
+    left:40%;
 }
