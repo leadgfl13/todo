@@ -5,13 +5,11 @@ import {testing} from "./project"
 import {display} from "./project"
 import{projectbutton} from "./project"
 import { pageLayout } from './project'
-import { formappear  } from './project';
-import{formtest} from './form';
+import { formappear  } from './form';
 
 
 
 projectbutton
-formtest()
 formappear()
 testing
 const test = makeToDo('test','this is a test', 6/13, 22)

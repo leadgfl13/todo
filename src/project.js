@@ -151,3 +151,10 @@ function clearProjects(){
 
 //So there will be a make new to-do button, a make new project button, and thena  functon that 
 //organizes the 
+
+let buttonsz = document.getElementById('todobutton')
+if(buttonsz){
+    console.log("Hello")
+}{
+
+}
