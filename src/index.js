@@ -10,7 +10,6 @@ import { formappear  } from './form';
 
 
 projectbutton
-formappear()
 testing
 const test = makeToDo('test','this is a test', 6/13, 22)
 

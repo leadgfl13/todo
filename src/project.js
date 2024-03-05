@@ -1,3 +1,5 @@
+import { formappear  } from './form';
+
 // an array to hold the projects
 
 let projects = []
@@ -98,23 +100,22 @@ function projectVis(){
         let display = document.createElement('div')
         let todobutton = document.createElement('button')
         todobutton.innerHTML = 'Add todo'
-        todobutton.addEventListener('click',()=>{
-            let title = prompt("Title?")
-            let desc = prompt("Description?")
-            let date = prompt("date")
-            let priority = prompt ("priority")
-            let todo = makeToDo(title,desc, date, priority )
-            projects[i].thing.push(todo)
-            let check = projects[i].thing
-            console.log(check)
-
-        })
-        
         todobutton.setAttribute = ('id', 'todobutton')
         display.setAttribute('id', 'project')
         let bottomright = document.getElementById('bottomright')
         bottomright.append(display)
         display.append(todobutton)
+        todobutton.addEventListener('click',()=>{
+             formappear()
+             
+            
+            //projects[i].thing.push(todo)
+            //let check = projects[i].thing
+           // console.log(check)
+
+        })
+        
+        
 }}
 
 

@@ -1,7 +1,6 @@
-import './style.css';
-let bottomright = document.getElementById('bottomright')
 
 function formappear(){
+let bottomright = document.getElementById('bottomright')
 let form = document.createElement('form')
 form.setAttribute('id', 'form')
 let nameinput = document.createElement('input')
@@ -54,18 +53,22 @@ Object.assign(priolabel,{
     innerHTML: "Priority"
 })
 
-let addtodo =document.createElement('button')
-addtodo.setAttribute('id', 'todobutton')
+form.append(namelabel,nameinput, desclabel, descinput,datelabel, dateinput, priolabel,prioinput)
+let testing = document.createElement('button')
+testing.setAttribute('id', 'todobutton')
+form.append(testing)
 
-form.append(namelabel,nameinput,desclabel,descinput,datelabel,dateinput,priolabel,prioinput, addtodo)
+testing.addEventListener("click",()=>{
+    let name = nameinput.value
+    let description = descinput.value
+    let date = dateinput.value
+    let priority = prioinput.value
+let todo = {name, description, date, priority}
+console.log(todo)
 
+})
 bottomright.append(form)
-addtodo.addEventListener("click",()=>{
-
-    (nameinput.value),(descinput.value),(dateinput.value),(prioinput.value)})
-
-
-
+}
 
 export{formappear}
 
