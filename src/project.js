@@ -43,7 +43,7 @@ export{projectbutton}
 function makeProject(projectname){
 
     return{
-        thing:[],
+        list:[],
         projectname:projectname,
 
         addToDo(addition){
@@ -92,14 +92,9 @@ function projectVis(){
         bottomright.append(display)
         display.append(todobutton)
         todobutton.addEventListener('click',()=>{
-             formappear()
-             
+             formappear(projects[i])
             
-            //projects[i].thing.push(todo)
-            //let check = projects[i].thing
-           // console.log(check)
-
-        })
+         })
         
         
 }}

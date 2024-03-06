@@ -1,5 +1,7 @@
+import {makeToDo} from './project'
 
-function formappear(){
+
+function formappear(project){
 let bottomright = document.getElementById('bottomright')
 let form = document.createElement('form')
 form.setAttribute('id', 'form')
@@ -59,17 +61,18 @@ testing.setAttribute('id', 'todobutton')
 testing.setAttribute('type', 'submmit')
 form.append(testing)
 
-testing.addEventListener("click",()=>{
+testing.addEventListener("click",(e)=>{
     let first = nameinput.value
     let second = descinput.value
-    console.log(first)
-
     let third = dateinput.value
     let fourth = prioinput.value
-    const something = (makeToDo(first,second,third,fourth))
-    console.log(something)
+    e.preventDefault()
+    let something = (makeToDo(first,second,third,fourth))
+    project.list.push(something)
+    console.log(project.list)
 
-})
+}
+)
 bottomright.append(form)
 }
 
