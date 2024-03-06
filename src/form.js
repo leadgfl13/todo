@@ -1,8 +1,8 @@
 import {makeToDo} from './project'
+let bottomright = document.getElementById('bottomright')
 
 
 function formappear(project){
-let bottomright = document.getElementById('bottomright')
 let form = document.createElement('form')
 form.setAttribute('id', 'form')
 let nameinput = document.createElement('input')
@@ -71,6 +71,8 @@ testing.addEventListener("click",(e)=>{
     project.list.push(something)
     console.log(project.list)
 
+
+
 }
 )
 bottomright.append(form)
@@ -79,3 +81,4 @@ bottomright.append(form)
 export{formappear}
 
 //this will be where the form lives
+

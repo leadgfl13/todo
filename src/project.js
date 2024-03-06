@@ -2,9 +2,16 @@ import { formappear  } from './form';
 
 // an array to hold the projects
 
+
+
 let projects = []
 
-
+function makeFirst(){
+    let first = makeProject('default')
+    projects.push(first)
+    projectVis()
+}
+export{makeFirst}
 
 //generate the layout for the page
 let pageLayout =(()=>{
@@ -26,11 +33,11 @@ export{pageLayout}
 
 
 // button for calling the project factory and displaying it
-let projectbutton = (function makeproj(){
+let projectbutton = (function (){
     const getProject = document.getElementById('makeproject')
     getProject.addEventListener('click',()=>{
-        let pName = prompt("What is your project name")
-        let currentp = makeProject(pName)
+        let Name = prompt("What is your project name")
+        let currentp = makeProject(Name)
        projects.push(currentp)
         projectVis()
     }
@@ -83,28 +90,24 @@ export{makeToDo}
 function projectVis(){
     clearProjects()
     for(let i =0; i<projects.length; i++){
-        let display = document.createElement('div')
-        let todobutton = document.createElement('button')
-        todobutton.innerHTML = 'Add todo'
-        todobutton.setAttribute = ('id', 'todobutton')
-        display.setAttribute('id', 'project')
         let bottomright = document.getElementById('bottomright')
-        bottomright.append(display)
-        display.append(todobutton)
-        todobutton.addEventListener('click',()=>{
-             formappear(projects[i])
-            
-         })
-        
-        
-}}
-
-
-
-
+        console.log(projects.length)
+        let project = document.createElement('div')
+        project.setAttribute('id','project')
+        bottomright.append(project)
+    }
+}
+   
 function clearProjects(){
     let bottomright = document.getElementById('bottomright')
-    bottomright.innerHTML = ''
+    if(!bottomright){
+        console.log("Hello")
+        return
+    }
+    else{
+        bottomright.innerHTML = ' '
+
+    }
 }
 
 // Need a factory function for toDo
