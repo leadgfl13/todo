@@ -9,11 +9,6 @@ import { formappear  } from './form';
 
 
 
-projectbutton
-testing
-const test = makeToDo('test','this is a test', 6/13, 22)
-
-let testproject = makeProject('testproject')
 
 
 

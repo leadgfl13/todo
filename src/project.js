@@ -57,8 +57,6 @@ export{makeProject}
 
 
 
-
-
 // factory function to make to-do's
 function makeToDo(title, description, duedate, priority){
     return{
@@ -72,22 +70,10 @@ function makeToDo(title, description, duedate, priority){
 
         }
     }
-
 }
 export{makeToDo}
 
 
-
-
-// function to display the projects
-function display(){
-    for(let i =0; i<projects.length; i++){
-        console.log(projects[i])
-        projectVis(projects[i])
-        todoVis()
-    }
-}
-export{display}
 
 
 
@@ -121,26 +107,6 @@ function projectVis(){
 
 
 
-
-let testing = (function subtodo(){
-     const getData = document.getElementById('subtodo')
-     let name = document.getElementById('name')
-     let desc = document.getElementById('desc')
-     let date = document.getElementById('date')
-     let prio = document.getElementById('prio')
-     getData.addEventListener('click',()=>{
-
-        const thistodo = makeToDo(name.value, desc.value, date.value, prio.value )
-        projects.push(thistodo)
-        display()
-    
-     })
-})()
-export{testing}
-
-
-
-
 function clearProjects(){
     let bottomright = document.getElementById('bottomright')
     bottomright.innerHTML = ''
@@ -153,9 +119,4 @@ function clearProjects(){
 //So there will be a make new to-do button, a make new project button, and thena  functon that 
 //organizes the 
 
-let buttonsz = document.getElementById('todobutton')
-if(buttonsz){
-    console.log("Hello")
-}{
 
-}

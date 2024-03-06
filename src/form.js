@@ -56,15 +56,18 @@ Object.assign(priolabel,{
 form.append(namelabel,nameinput, desclabel, descinput,datelabel, dateinput, priolabel,prioinput)
 let testing = document.createElement('button')
 testing.setAttribute('id', 'todobutton')
+testing.setAttribute('type', 'submmit')
 form.append(testing)
 
 testing.addEventListener("click",()=>{
-    let name = nameinput.value
-    let description = descinput.value
-    let date = dateinput.value
-    let priority = prioinput.value
-let todo = {name, description, date, priority}
-console.log(todo)
+    let first = nameinput.value
+    let second = descinput.value
+    console.log(first)
+
+    let third = dateinput.value
+    let fourth = prioinput.value
+    const something = (makeToDo(first,second,third,fourth))
+    console.log(something)
 
 })
 bottomright.append(form)
