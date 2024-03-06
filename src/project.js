@@ -95,6 +95,13 @@ function projectVis(){
         let project = document.createElement('div')
         project.setAttribute('id','project')
         bottomright.append(project)
+        let todobutton = document.createElement('button')
+        todobutton.innerHTML = 'add todo'
+        todobutton.setAttribute('id', 'todobutton')
+        project.append(todobutton)
+        todobutton.addEventListener('click',()=>{
+            formappear(projects[i])
+        })
     }
 }
    

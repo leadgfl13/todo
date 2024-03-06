@@ -1,8 +1,9 @@
 import {makeToDo} from './project'
-let bottomright = document.getElementById('bottomright')
 
 
 function formappear(project){
+    let bottomright = document.getElementById('bottomright')
+
 let form = document.createElement('form')
 form.setAttribute('id', 'form')
 let nameinput = document.createElement('input')
