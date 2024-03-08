@@ -66,3 +66,9 @@ input{
     background-color:blanchedalmond;
     border-radius:10px;
 }
+
+#tododisplay{
+    height:20px;
+    width:20px;
+    background-color:green;
+}

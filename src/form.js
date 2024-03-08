@@ -1,4 +1,6 @@
 import {makeToDo} from './project'
+import{displayToDo} from './project'
+import{projectVis} from './project'
 
 
 function formappear(project){
@@ -57,12 +59,12 @@ Object.assign(priolabel,{
 })
 
 form.append(namelabel,nameinput, desclabel, descinput,datelabel, dateinput, priolabel,prioinput)
-let testing = document.createElement('button')
-testing.setAttribute('id', 'todobutton')
-testing.setAttribute('type', 'submmit')
-form.append(testing)
+let submittodo = document.createElement('button')
+submittodo.setAttribute('id', 'todobutton')
+submittodo.setAttribute('type', 'submmit')
+form.append(submittodo)
 
-testing.addEventListener("click",(e)=>{
+submittodo.addEventListener("click",(e)=>{
     let first = nameinput.value
     let second = descinput.value
     let third = dateinput.value
@@ -71,15 +73,15 @@ testing.addEventListener("click",(e)=>{
     let something = (makeToDo(first,second,third,fourth))
     project.list.push(something)
     console.log(project.list)
-
-
-
-}
-)
+ projectVis()
+})
 bottomright.append(form)
+
 }
 
 export{formappear}
 
 //this will be where the form lives
+
+
 
