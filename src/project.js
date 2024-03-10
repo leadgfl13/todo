@@ -8,8 +8,6 @@ import {formappear} from './form';
 let projects = []
 
 
-
-
 function makeFirst(){
     let first = makeProject('default')
     projects.push(first)
@@ -91,55 +89,47 @@ function projectVis(){
     for(let i = 0; i<projects.length; i++){
         let bottomright = document.getElementById('bottomright')
         console.log(projects.length)
+        let thisproject = projects[i]
+        let projectID = projects[i].projectname
         let project = document.createElement('div')
         project.setAttribute('class', 'project')
-        project.setAttribute('id', projects[i].projectname)
-        project.innerHTML = projects[i].projectname
+        project.setAttribute('id', projectID)
+        project.innerHTML = thisproject.projectname
         bottomright.append(project)
         let todobutton = document.createElement('button')
         todobutton.innerHTML = 'add todo'
         todobutton.setAttribute('id', 'todobutton')
         project.append(todobutton)
-        for(let j = 0; j<projects[i].list.length; j++){
-            let todo = document.createElement('div')
-            todo.setAttribute('id','tododisplay')
-            let base = document.createElement('div')
-            base.setAttribute('id','todogrid')
-            let name = document.createElement('div')
-            name.setAttribute('id', 'todoname')
-            name.innerHTML = todo.title
-             let description = document.createElement('div')
-             description.setAttribute('id','tododescription')
-             let date = document.createElement('div')
-             date.setAttribute('id','tododate')
-             let priority = document.createElement('div')
-             priority.setAttribute('id','todopriority')
-             base.append(name)
-             project.append(base)
-            
-
-        }
         todobutton.addEventListener('click',()=>{
-            formappear(projects[i])
+            formappear(thisproject)
         })
-    }}
+        
+        
+    }
+    
+
+}
+
+
 export{projectVis}
    
-function renderTodo(todo){
-    let base = document.createElement('div')
-     base.setAttribute('id','todogrid')
-     let name = document.createElement('div')
-     name.setAttribute('id', 'todoname')
-     name.innerHTML = todo.title
-     let description = document.createElement('div')
-     description.setAttribute('id','tododescription')
-     let date = document.createElement('div')
-     date.setAttribute('id','tododate')
-     let priority = document.createElement('div')
-     priority.setAttribute('id','todopriority')
-     base.append(name)
-     project.append(base)
+function renderTodo(projectobject, theid){
+    let currentproject = projectobject
+    let list = currentproject.list
+    for(let i =0; i<list.length; i ++){
+        let todo = list.length[i]
+        let base = document.createElement('div')
+        base.setAttribute('id','todogrid')
+        let name = document.createElement('div')
+        name.setAttribute('id', 'todoname')
+        name.innerHTML = todo.title
+        base.append(name)
+        projectid.append(base)
+
+    }
 }
+export{renderTodo}
+
 
 function clearProjects(){
     let bottomright = document.getElementById('bottomright')

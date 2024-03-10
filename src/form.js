@@ -73,11 +73,13 @@ submittodo.addEventListener("click",(e)=>{
     let something = (makeToDo(first,second,third,fourth))
     project.list.push(something)
     console.log(project.list)
- projectVis()
 })
 bottomright.append(form)
+projectVis()
 
 }
+
+
 
 export{formappear}
 
