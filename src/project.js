@@ -42,6 +42,7 @@ let projectbutton = (function (){
         let currentp = makeProject(Name)
        projects.push(currentp)
         projectVis()
+        renderTodo()
     }
 )
 })()
@@ -100,32 +101,32 @@ function projectVis(){
         todobutton.innerHTML = 'add todo'
         todobutton.setAttribute('id', 'todobutton')
         project.append(todobutton)
+
         todobutton.addEventListener('click',()=>{
-            formappear(thisproject)
+            formappear(thisproject,projectID) 
         })
-        
-        
     }
-    
+
 
 }
 
 
 export{projectVis}
    
-function renderTodo(projectobject, theid){
+function renderTodo(projectobject, projectid){
+    clearToDos(projectobject, projectid)
     let currentproject = projectobject
     let list = currentproject.list
+    let project = document.getElementById(projectid)
     for(let i =0; i<list.length; i ++){
-        let todo = list.length[i]
+        let todo = list[i]
         let base = document.createElement('div')
         base.setAttribute('id','todogrid')
         let name = document.createElement('div')
         name.setAttribute('id', 'todoname')
         name.innerHTML = todo.title
         base.append(name)
-        projectid.append(base)
-
+        project.append(base)
     }
 }
 export{renderTodo}
@@ -145,3 +146,16 @@ function clearProjects(){
 
 
 
+function clearToDos(thusproject, thediv){
+    let thisdiv = document.getElementById('todogrid')
+    if(!thisdiv){
+        console.log("Hello")
+        return
+    }
+    else{
+        thisdiv.innerHTML = ' '
+
+    }
+}
+
+export{clearToDos}

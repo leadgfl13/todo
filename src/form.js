@@ -1,10 +1,13 @@
 import {makeToDo} from './project'
 import{displayToDo} from './project'
 import{projectVis} from './project'
+import { renderTodo } from './project'
+import { projectID } from './project'
+import { thisproject } from './project'
 
-
-function formappear(project){
+function formappear(project, thediv){
     let bottomright = document.getElementById('bottomright')
+    let thisdiv = document.getElementById(thediv)
 
 let form = document.createElement('form')
 form.setAttribute('id', 'form')
@@ -73,17 +76,18 @@ submittodo.addEventListener("click",(e)=>{
     let something = (makeToDo(first,second,third,fourth))
     project.list.push(something)
     console.log(project.list)
+    renderTodo(project, thediv) 
+
 })
 bottomright.append(form)
-projectVis()
 
 }
-
-
 
 export{formappear}
 
 //this will be where the form lives
+
+
 
 
 
