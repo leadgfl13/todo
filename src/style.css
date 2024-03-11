@@ -84,3 +84,7 @@ input{
     width:200px;
     background-color: green;
 }
+
+#todogrid{
+    display:flex;
+}
