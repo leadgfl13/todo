@@ -13,9 +13,9 @@ body{
 #makeporject{
     grid-area:1/1/2/2;
 }
-#project{
-    height:00px;
-    width:200px;
+.project{
+    height:20px;
+    width:90%;
     background-color: skyblue;
     border-radius:10px;
     border: 2px black solid;

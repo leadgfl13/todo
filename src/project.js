@@ -13,7 +13,7 @@ return{
     name, list
 }
 }
-// IIFE for containing the
+// IIFE for containing adding logic to the make project button
 let makeprojects = (()=>{
     projectbutton.addEventListener('click',()=>{
         console.log("Clearing current Projects")
@@ -29,17 +29,9 @@ let makeprojects = (()=>{
 })()
 export{makeprojects}
 
-function checkProjects(){
-    console.log("Going through projects and adding them to the page")
-    for (let i =0; i<projects.length; i++){
-        let thisproject = projects[i]
-        console.log(thisproject.name)
-        console.log("has this many todos")
-        console.log(thisproject.list.length)
-        displayProjects()
-    }
-}
 
+
+//creates project buttons
 function displayProjects(){
     for (let i =0; i<projects.length; i++){
         let thisproject = projects[i]
@@ -48,10 +40,13 @@ function displayProjects(){
         projectbox.setAttribute('class', 'project')
         projectbox.setAttribute('id', thisproject.name)
         bottomleft.append(projectbox)
-
+        projectbox.addEventListener('click',()=>{
+            displaytodo(thisproject.name)
+        })
 }
 }
 
+//removes projects to prevent them from being displayed twice
 function clearProjects(){
     if (bottomleft.innerHTML){
         console.log('Clearing projects')
@@ -60,5 +55,9 @@ function clearProjects(){
     else{
     console.log("Nothing to see here")
 }}
-
 export{clearProjects}
+
+function displaytodo(projectname){
+    bottomright.innerHTML =projectname
+
+}
