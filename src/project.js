@@ -41,7 +41,7 @@ function displayProjects(){
         projectbox.setAttribute('id', thisproject.name)
         bottomleft.append(projectbox)
         projectbox.addEventListener('click',()=>{
-            displaytodo(thisproject.name)
+            todoDisplay(thisproject)
         })
 }
 }
@@ -59,5 +59,31 @@ export{clearProjects}
 
 function displaytodo(projectname){
     bottomright.innerHTML =projectname
+
+}
+
+
+//Module to display todo's.  Currently takes project and ties it to the display
+function todoDisplay(project){
+    bottomright.innerHTML= ''
+    let todolist = project.list
+    for(let i = 0; i<todolist.length; i++){
+        //loop for the todocards
+    }
+
+        let addtodo = document.createElement('button')
+        addtodo.innerHTML = 'Add to Do'
+        bottomright.append(addtodo)
+        //will need to create a form, and then add submit form as the event listener with the project passed through
+        addtodo.addEventListener('click',()=>{
+            
+            console.log(project.name)
+        })
+        
+    }
+
+// Function to submit the data in the form and then save it to the object.  Will need to run the display project again
+//to update the page.  Will be added as event listener on submit form button
+function submitForm(project){
 
 }

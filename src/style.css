@@ -37,67 +37,8 @@ body{
     gap:10px;
 }
 
-#form{
-    display:flex;
-    height:400px;
-    width:400px;
-    border:solid 2px green;
-    background-color:cyan;
-    position:absolute;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    top:40%;
-    left:40%;
-}
-
-#form2{
-    display:flex;
-    height:400px;
-    width:400px;
-    border:solid 2px green;
-    background-color:cyan;
-    position:absolute;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    top:40%;
-    left:40%;
-}
-
-input{
-    height:40px;
-    width:100px;
-}
-
-#todobutton{
-    height:40px;
-    width:100px;
-    font-size:16px;
-    background-color:blanchedalmond;
-    border-radius:10px;
-}
-
-#tododisplay{
-    height:20px;
-    width:20px;
-    background-color:green;
-}
-
-#poop{
+#todocard{
     height:200px;
     width:200px;
-    background-color: brown;
-}
-
-#pee{
-    height:200px;
-    width:200px;
-    background-color: green;
-}
-
-#todogrid{
-    display:flex;
+    background-color:aqua;
 }
