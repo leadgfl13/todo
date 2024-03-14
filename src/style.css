@@ -38,7 +38,28 @@ body{
 }
 
 #todocard{
+    justify-content:center;
+    align-items:center;
+    display:grid;
+    grid-template-rows:1fr 1fr 1fr 1fr;
+    grid-template-columns:1fr;
     height:200px;
     width:200px;
     background-color:aqua;
 }
+
+#name{
+    text-align:center;
+}
+
+#form{
+    display:none;
+    flex-direction:column;
+    height:200px;
+    width:200px;
+    background-color:blanchedalmond;
+    position:absolute;
+    top:40%;
+    left:40%;
+}
+
