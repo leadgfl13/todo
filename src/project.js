@@ -49,7 +49,14 @@ function displayProjects(){
         projectbox.setAttribute('id', thisproject.name)
         bottomleft.append(projectbox)
         projectbox.addEventListener('click',()=>{
-            todoDisplay(thisproject)
+console.log('hello I AM A PROJECT')
+            let addtodo = document.createElement('button')
+            addtodo.innerHTML = 'Add todo'
+            bottomright.append(addtodo)
+            addtodo.addEventListener('click',()=>
+            console.log("I have been cicked"))
+            createForm(projects[i])
+            
 
         })
 }
@@ -70,19 +77,9 @@ export{clearProjects}
 
 
 
-//Module to display todo's.  Currently takes project and ties it to the display
-function todoDisplay(project){
-    bottomright.innerHTML = ''
-   displayToDo(project)
-        let addstodo = document.createElement('button')
-        addstodo.innerHTML = 'Add to Do'
-        bottomright.append(addstodo)
-        //will need to create a form, and then add submit form as the event listener with the project passed through
-        addstodo.addEventListener('click',()=>{
-            
-            createForm(project)
-        })
-    }
+
+
+
 
 // Function to submit the data in the form and then save it to the object.  Will need to run the display project again
 //to update the page.  Will be added as event listener on submit form button
@@ -97,13 +94,13 @@ function createForm(thecurrentproject){
     let subtodo =  document.getElementById('subtodo')
     subtodo.addEventListener('click',(e)=>{
         e.preventDefault()    
-        addToDo(thecurrentproject)
-        name.value = ''
-        description.value = ''
-        priority.value = ''
-        date.value = ''
-        form.style.display = 'none'
-       
+       addToDo(thecurrentproject)
+       name.value = ''
+     description.value = ''
+      priority.value = ''
+      date.value = ''
+       form.style.display = 'none'
+
     })
 
 
@@ -119,29 +116,7 @@ function addToDo(project){
     let thistodo = makeTodo(name, description, priority, date)
     project.list.push(thistodo)
     console.log(project.list)
-    //displayToDo(project)
 }
 
-function displayToDo(project){
-    let cards = document.getElementsByClassName('todocards')
-    while(cards[0]){
-    cards[0].parentNode.removeChild(cards[0])
-    }
-    
 
-    for(let i = 0; i<project.list.length; i++){
-        let todocard = document.createElement('div')
-        todocard.setAttribute('id', 'todocard')
-        todocard.setAttribute('class', 'todocards')
-        let list = project.list
-        let name = document.createElement('div')
-        let description = document.createElement('div')
-        name.innerHTML = list[i].name
-        description.innerHTML = list[i].description
-        todocard.append(name, description)
-        bottomright.append(todocard)
-        
-    }
-    
-}
 
