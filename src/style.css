@@ -48,11 +48,11 @@ body{
     background-color:aqua;
 }
 
-#name{
+#labelname{
     text-align:center;
 }
 
-#form{
+#forms{
     display:none;
     flex-direction:column;
     height:200px;
