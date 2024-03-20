@@ -1,13 +1,6 @@
-import {makepProject} from './project'
-import './style.css'
-import {clearProjects} from './project'
-import { displayProjects } from './project'
-import { createForm } from './project'
-import { addtoList } from './project'
-import {getProject} from './project'
-displayProjects()
+import {maketoDo} from './project'
 
 
-var currentproject = ''
+const test  = maketoDo("Test", 'this is a test','tomorrow','poop')
 
-getProject()
+console.log({test})
