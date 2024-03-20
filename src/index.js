@@ -4,6 +4,10 @@ import {clearProjects} from './project'
 import { displayProjects } from './project'
 import { createForm } from './project'
 import { addtoList } from './project'
+import {getProject} from './project'
+displayProjects()
 
 
+var currentproject = ''
 
+getProject()

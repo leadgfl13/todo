@@ -2,7 +2,7 @@
 let testproject = makeProject('test')
 const projects = [testproject]
 
-
+var currentproject  = ''
 
 let projectbutton = document.getElementById('makeproject')
 let bottomright = document.getElementById('bottomright')
@@ -12,9 +12,11 @@ let subtodo =document.getElementById('subtodo')
 
 //ITS ADDING MULTIPLE EVENT LISTENERS!!!
 subtodo.addEventListener('click',(event)=>{
+    console.log(currentproject)
     event.preventDefault();
     console.log("I have been clicked")
-   addtoList(projects[0])
+    
+   addtoList(currentproject)
 })
 
 //factory function for making new project
@@ -34,6 +36,8 @@ function makeTodo(one, two, three, four){
 //clears the projects and then displays them so only recent run through is displayed
  projectbutton.addEventListener('click',()=>{
         console.log("Clearing current Projects")
+        let addproject = makeProject(prompt("Name of new project?"))
+        projects.push(addproject)
         clearProjects()
         displayProjects()
     })
@@ -41,9 +45,10 @@ function makeTodo(one, two, three, four){
 
 //creates project buttons
 function displayProjects(){
-        let thisproject = projects[0]
+    for(let i = 0; i<projects.length; i++){
+        let thisproject = projects[i]
         let projectbox = document.createElement('button')
-        projectbox.innerHTML= thisproject.name
+        projectbox.innerHTML = thisproject.name
         projectbox.setAttribute('class', 'project')
         projectbox.setAttribute('id', thisproject.name)
         bottomleft.append(projectbox)
@@ -55,6 +60,7 @@ function displayProjects(){
         createForm(thisproject)
             )
         })
+    }
 }
 
 export{displayProjects}
@@ -76,7 +82,8 @@ export{clearProjects}
 function createForm(thecurrentproject){
     let form = document.getElementById('forms')
     form.style.display = 'flex'
-   
+     thecurrentproject = currentproject
+   return{currentproject}
      
 
     }
@@ -90,8 +97,15 @@ function addtoList(project){
     let date = document.getElementById('date')
     let todo = makeTodo(name, description, priority, date)
     console.log(todo)
+    console.log(project)
+    console.log(currentproject)
     project.list.push(todo)
     forms.style.display = 'none'
 }
 
 
+function getProject(){
+    return{currentproject}
+}
+
+export{getProject}
