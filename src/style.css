@@ -10,7 +10,9 @@ body{
     grid-template-columns:20% 80%;
     
 }
-#makeporject{
+#makeproject{
+    height:100%;
+    width:100%;
     grid-area:1/1/2/2;
 }
 .project{

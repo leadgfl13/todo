@@ -1,6 +1,16 @@
-import {maketoDo} from './project'
+import {makeToDo} from './project'
+import {makeProject} from './project'
+import style from './style.css'
+import { showProjects } from './project'
+let bottomleft = document.getElementById('bottomleft')
 
 
-const test  = maketoDo("Test", 'this is a test','tomorrow','poop')
 
-console.log({test})
+
+
+
+showProjects()
+
+
+
+
