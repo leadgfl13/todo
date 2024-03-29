@@ -3,14 +3,16 @@
 import {displayPage} from './form.js'
 import { bringupForm } from './form.js'
 import { clearForm } from './form.js'
+import { subToDo } from './form.js'
+
 const projects = []
 
 
 export class makeProject{
 
-    constructor(name, todolist = []) {
+    constructor(name) {
         this.name = name
-        this.todolist = todolist
+        this.todolist = []
 //adds this project to the project array
     }
      addProject(){
@@ -18,7 +20,6 @@ export class makeProject{
      }  
 //adds the todo to the todolist
      addToDo(todoobject){
-        console.log("currently adding " + todoobject.name + "to " + this.name)
         this.todolist.push(todoobject)
      }
 //displays the name of all todos in the array
@@ -33,7 +34,7 @@ export class makeProject{
     }
 
 
-    
+
     //initial default project
      let test = new makeProject('test')
      test.addProject()
@@ -48,19 +49,19 @@ export class makeToDo{
 
 
 
-//creates a list of current project buttons
+//creates a list of current project buttons *****
 function showProjects(){
-    bottomleft.innerHTML = ''
-    for(let i =0; i<projects.length; i++){
-        let project =document.createElement('button')
-        let currentproject = projects[i]
-        project.innerHTML = projects[i].name
+    let lastitem = (projects[projects.length -1])
+    console.log(lastitem)
+        let project = document.createElement('button')
+        project.innerHTML = lastitem.name
         bottomleft.append(project)
         project.addEventListener('click', ()=>{
-            displayPage(currentproject)
+            console.log('I am project ' + lastitem.name)
+            displayPage(lastitem)
             })
         }
-    }
+    
 
 export{showProjects}
 
