@@ -19,9 +19,9 @@ export{displayPage}
 function clearForm(current){
     let labelname = document.getElementById('labelname')
     let ntodo = new makeToDo(labelname.value)
-    console.log ("CURRENT IS " + current.name)
+    console.log ("CURRENT PROJECT IS " + current.name)
     current.addToDo(ntodo)
-    console.log(current.todolist)
+    console.log(current.todolist.length)
     current.showtodo()
     description.value = ' '
     labelname.value =' '

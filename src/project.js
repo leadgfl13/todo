@@ -10,9 +10,9 @@ const projects = []
 
 export class makeProject{
 
-    constructor(name) {
+    constructor(name, todolist =[]) {
         this.name = name
-        this.todolist = []
+        this.todolist = todolist
 //adds this project to the project array
     }
      addProject(){
@@ -35,10 +35,7 @@ export class makeProject{
 
 
 
-    //initial default project
-     let test = new makeProject('test')
-     test.addProject()
-     // Make an array of todo's, give the todo's a project property
+   
 
      //makes todo's
 export class makeToDo{
@@ -49,7 +46,7 @@ export class makeToDo{
 
 
 
-//creates a list of current project buttons *****
+//creates a list of current project buttons 
 function showProjects(){
     let lastitem = (projects[projects.length -1])
     console.log(lastitem)
