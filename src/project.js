@@ -3,25 +3,33 @@
 import {displayPage} from './form.js'
 import { bringupForm } from './form.js'
 import { clearForm } from './form.js'
-import { subToDo } from './form.js'
+import {subToDo} from './form.js'
 
 const projects = []
 
 
 export class makeProject{
 
-    constructor(name, todolist =[]) {
+    constructor(name) {
         this.name = name
-        this.todolist = todolist
+        this.todolist = []
 //adds this project to the project array
     }
+
      addProject(){
         projects.push(this)
+        return
      }  
+
 //adds the todo to the todolist
      addToDo(todoobject){
+        console.log("Checking the project... it is " + this.name)
         this.todolist.push(todoobject)
+        console.log("currently there are " + this.todolist.length + " todo's")
+        return
+
      }
+
 //displays the name of all todos in the array
      showtodo(){
         bottomright.innerHTML = ''
@@ -34,9 +42,6 @@ export class makeProject{
     }
 
 
-
-   
-
      //makes todo's
 export class makeToDo{
     constructor(name){
@@ -48,17 +53,18 @@ export class makeToDo{
 
 //creates a list of current project buttons 
 function showProjects(){
-    let lastitem = (projects[projects.length -1])
-    console.log(lastitem)
+    bottomleft.innerHTML = ''
+    for(let i = 0; i<projects.length; i++){
+        let currentproject = projects[i]
         let project = document.createElement('button')
-        project.innerHTML = lastitem.name
+        project.innerHTML = currentproject.name
         bottomleft.append(project)
         project.addEventListener('click', ()=>{
-            console.log('I am project ' + lastitem.name)
-            displayPage(lastitem)
+            console.log("Hello I have been clicked")
+            displayPage(currentproject)
             })
         }
-    
+}
 
 export{showProjects}
 
