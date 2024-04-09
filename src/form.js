@@ -3,8 +3,12 @@ import { makeToDo } from "./project"
 //adds a button for adding todo's to the top, and brings up the form for making a todo
 function displayPage(current){
     current.showtodo()
-    let todobutton = document.getElementById('addtodo')
-    todobutton.addEventListener('click',()=>{
+    topright.innerHTML = ''
+    let addtodo = document.createElement('button')
+    addtodo.setAttribute('id', 'addtodo')
+    topright.append(addtodo)
+    addtodo.innerHTML = 'add to do'
+    addtodo.addEventListener('click',()=>{
         bringupForm(current)
     })
 }
@@ -18,7 +22,7 @@ function clearForm(current){
     let ntodo = new makeToDo(labelname.value)
     console.log ("CURRENT PROJECT IS " + current.name)
     console.log(current.todolist)
-    current.addToDo(ntodo)
+    current.todolist.push(ntodo)
     console.log(current.todolist.length)
     description.value = ' '
     labelname.value =' '
@@ -32,16 +36,16 @@ export{clearForm}
 
 
 
+
 //brings up the form for adding a todo.  Currently has the right project
 function bringupForm(theproject){
     let form = document.getElementById('forms')
     form.style.display = 'flex'   
-    let subtodo = document.getElementById('subtodo')
-    subtodo.addEventListener('click',(e)=>{
+    let submission = document.getElementById('subtodo')
+    submission.addEventListener('click',(e)=>{
         e.preventDefault()
-        //clearForm(current)
         clearForm(theproject)
-        console.log("Am I getting called more than")
+        console.log("Am I getting called more than once?")
         form.style.display = 'none'
     })
  }

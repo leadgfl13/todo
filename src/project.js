@@ -13,12 +13,12 @@ export class makeProject{
     constructor(name) {
         this.name = name
         this.todolist = []
-//adds this project to the project array
     }
 
+
+//adds this project to the project array
      addProject(){
         projects.push(this)
-        return
      }  
 
 //adds the todo to the todolist
@@ -26,7 +26,6 @@ export class makeProject{
         console.log("Checking the project... it is " + this.name)
         this.todolist.push(todoobject)
         console.log("currently there are " + this.todolist.length + " todo's")
-        return
 
      }
 
