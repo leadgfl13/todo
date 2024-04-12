@@ -1,17 +1,17 @@
-import { makeToDo } from "./project"
+import {makeToDo} from "./project"
 
 //adds a button for adding todo's to the top, and brings up the form for making a todo
 function displayPage(current){
-    current.showtodo()
-    topright.innerHTML = ''
-    let addtodo = document.createElement('button')
-    addtodo.setAttribute('id', 'addtodo')
-    topright.append(addtodo)
-    addtodo.innerHTML = 'add to do'
-    addtodo.addEventListener('click',()=>{
-        bringupForm(current)
-    })
+    for(let i = 0; i<todos.length; i++){
+        if(todos[i].name == current.name){
+            console.log("It matches!")
+        }
+        return
+        
+    }
+    
 }
+
 export{displayPage}
 
 
