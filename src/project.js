@@ -1,5 +1,5 @@
 // class for making aproject
-
+import{todos} from "./events"
 import {displayPage} from './form.js'
 import { bringupForm } from './form.js'
 import { clearForm } from './form.js'
@@ -30,6 +30,14 @@ export class makeToDo{
     }
 }
 
+
+export function showTodos(projectname){
+    for(let i = 0; i<todos.length; i++){
+        if(todos[i].project == projectname){
+            console.log("We have a match!")
+        }
+    }
+}
 
 
 

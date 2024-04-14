@@ -14,7 +14,7 @@ let submission = document.getElementById('subtodo')
 //makes a todo object, adds it to the current project and then clears the form
 function clearForm(){
     let labelname = document.getElementById('labelname')
-    let ntodo = new makeToDo(labelname.value)
+    let ntodo = new makeToDo(labelname.value, projectname.value)
     todos.push(ntodo)
     console.log(todos.length)
     description.value = ' '

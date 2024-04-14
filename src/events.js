@@ -1,4 +1,5 @@
 import { bringupForm } from "./form"
+import {showTodos} from "./project"
 
  let projects = []
  let todos = []
@@ -8,9 +9,9 @@ export {todos}
 
 
 
+
 //creates a list of current project buttons 
 function showProjects(){
-    console.log("projectz")
     bottomleft.innerHTML = ''
     for(let i = 0; i<projects.length; i++){
         let currentproject = projects[i]
@@ -19,6 +20,7 @@ function showProjects(){
         bottomleft.append(project)
         project.addEventListener('click', ()=>{
             console.log("Hello I have been clicked")
+            showTodos(currentproject.name)
             })
         }
 }
