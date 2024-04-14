@@ -1,13 +1,11 @@
-
+import { bringupForm } from "./form"
 
  let projects = []
  let todos = []
 
 export {projects}
+export {todos}
 
- export function todosview(){
-    return{todos}
- }
 
 
 //creates a list of current project buttons 
@@ -25,3 +23,9 @@ function showProjects(){
         }
 }
 export{showProjects}
+
+let todobutton = document.getElementById('addtodo')
+todobutton.addEventListener('click',()=>{
+    console.log("Add todo")
+    bringupForm()
+})
