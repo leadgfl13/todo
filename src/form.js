@@ -14,12 +14,16 @@ let submission = document.getElementById('subtodo')
 //makes a todo object, adds it to the current project and then clears the form
 function clearForm(){
     let labelname = document.getElementById('labelname')
-    let ntodo = new makeToDo(labelname.value, projectname.value,priority.value)
+    let thepriority = document.getElementsByTagName('priority')
+    let radio =  document.querySelector('input[name="priority"]:checked').value;
+
+    console.log(radio)
+    let ntodo = new makeToDo(labelname.value, projectname.value, radio)
+    console.log(thepriority)
     todos.push(ntodo)
     console.log(todos.length)
     description.value = ' '
     labelname.value =' '
-    priority.value = 0
     date.value = 0
 }
 export{clearForm}

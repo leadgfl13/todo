@@ -30,8 +30,19 @@
         <input type="text" id = 'projectname'>
         <label for="description">Description</label>
         <input type="text" id = 'description'>
-        <label for="priority">Priority</label>
-        <input type="number"  id = 'priority'>
+        <legend>Priority
+
+             <div id = 'radiobox'>
+                <input type="radio"  id = 'low' name = 'priority' value = 'low'>
+                <label for="low" >Low</label>
+                <input type="radio"  id = 'med' name = 'priority' value = 'med'>
+                <label for="med" >Medium</label>
+                <input type="radio"  id = 'high' name = 'priority' value = 'high'>
+                <label for="high" >High</label>
+            </div>
+         </legend>
+
+        
         <label for="date">Due date</label>
         <input type="number" id = 'date'>
         <button id = 'subtodo'>Submit to do</button>

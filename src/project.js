@@ -27,7 +27,7 @@ export class makeToDo{
     constructor(name, project,priority){
         this.name = name
         this.project = project
-        this.priority =priority
+        this.priority = priority
     }
 }
 
@@ -49,17 +49,15 @@ function makeCard(atodo){
     card.setAttribute('id','todocard')
     card.innerHTML = atodo.name
     bottomright.append(card)
-    console.log(atodo.priority)
-    if(atodo.priority ==1){
+    console.log(atodo.priority.value)
+    if(atodo.priority == "low"){
         card.style.backgroundColor = 'blue'
     }
-    if(atodo.priority == 2){
+    if(atodo.priority == "med"){
         card.style.backgroundColor = 'green'
     }
-    if(atodo.priority == 3){
-        card.style.backgroundColor = 'yellow'
-    }
-     if(atodo.priority == 4){
+   
+     if(atodo.priority == "high"){
         card.style.backgroundColor = 'red'
     }
 
