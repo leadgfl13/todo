@@ -15,11 +15,19 @@ let addproject = document.getElementById('makeproject')
 
 addproject.addEventListener('click',()=>{
     console.log("I've been clicked")
-    let newproject = new makeProject(prompt("What is the new project name?"))
-    newproject.addProject()
-    showProjects()
-
+    let newprojectname = prompt("What is the new project name?")
+    if(newprojectname == null || newprojectname == ''){
+        console.log("nothing")
+        return
+    }
+    else{
+        let newproject = new makeProject(newprojectname)
+            newproject.addProject()
+            showProjects()
+    }
 })
+
+
 
 
 
