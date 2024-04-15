@@ -1,6 +1,8 @@
 import {todos} from "./events"
 import { makeToDo } from "./project"
 import {projects} from "./events"
+import { showTodos } from "./project"
+
 let form = document.getElementById('forms')
 let checkboxfield = document.getElementById('checkboxfield')
 
@@ -35,8 +37,10 @@ export function makecheckbox(){
 let submission = document.getElementById('subtodo')
     submission.addEventListener('click',(e)=>{
         e.preventDefault()
+        let project =projectname.value
+        console.log("I am project" + project)
         clearForm()
-        console.log("Am I getting called more than once?")
+
         form.style.display = 'none'
     })
 
@@ -50,6 +54,8 @@ function clearForm(){
     let ntodo = new makeToDo(labelname.value, projectname.value, radio)
     console.log(thepriority)
     todos.push(ntodo)
+    showTodos(projectname.value)
+
     console.log(todos.length)
     description.value = ' '
     labelname.value =' '
