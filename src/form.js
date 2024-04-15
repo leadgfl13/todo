@@ -1,8 +1,37 @@
 import {todos} from "./events"
 import { makeToDo } from "./project"
-
-
+import {projects} from "./events"
 let form = document.getElementById('forms')
+let checkboxfield = document.getElementById('checkboxfield')
+
+
+export function makecheckbox(){
+    for(let i =0; i<projects.length; i++){
+        let test = document.createElement('input')
+        Object.assign(test, {
+            type: 'radio',
+            id: projects[i],
+            name: "project"
+        })
+        let label = document.createElement('label')
+        label.htmlFor = 'testing'
+        Object.assign(label, {
+            innerHTML: projects[i].name,
+            id: 'labeltesting',
+        })
+      
+ 
+        checkboxfield.append(label,test)
+
+    }
+
+
+}
+
+
+
+
+
 let submission = document.getElementById('subtodo')
     submission.addEventListener('click',(e)=>{
         e.preventDefault()

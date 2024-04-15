@@ -1,5 +1,6 @@
 import { bringupForm } from "./form"
 import {showTodos} from "./project"
+import {makecheckbox} from "./form"
 
  let projects = []
  let todos = []
@@ -30,4 +31,5 @@ let todobutton = document.getElementById('addtodo')
 todobutton.addEventListener('click',()=>{
     console.log("Add todo")
     bringupForm()
+    //makecheckbox()
 })
