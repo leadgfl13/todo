@@ -10,6 +10,8 @@ let checkboxfield = document.getElementById('checkboxfield')
 export function makecheckbox(){
     checkboxfield.innerHTML =''
     for(let i =0; i<projects.length; i++){
+        let inputfield = document.createElement('div')
+        inputfield.setAttribute('class', 'inputfield')
         let test = document.createElement('input')
         Object.assign(test, {
             type: 'radio',
@@ -24,8 +26,8 @@ export function makecheckbox(){
             id: 'labeltesting',
         })
       
- 
-        checkboxfield.append(label,test)
+        inputfield.append(label,test)
+        checkboxfield.append(inputfield)
 
     }
 
@@ -49,15 +51,12 @@ let submission = document.getElementById('subtodo')
 //makes a todo object, adds it to the current project and then clears the form
 function clearForm(){
     let labelname = document.getElementById('labelname')
-    let thepriority = document.getElementsByTagName('priority')
-    let radio =  document.querySelector('input[name="priority"]:checked').value;
-    let radio2 =  document.querySelector('input[name="project"]:checked').value;
+    let priority =  document.querySelector('input[name="priority"]:checked').value;
+    let projectname =  document.querySelector('input[name="project"]:checked').value;
 
-console.log(radio2)
-    let ntodo = new makeToDo(labelname.value, radio2, radio)
-    console.log(thepriority)
+    let ntodo = new makeToDo(labelname.value, projectname, priority)
     todos.push(ntodo)
-    showTodos(radio2)
+    showTodos(projectname)
 
     console.log(todos.length)
     description.value = ' '

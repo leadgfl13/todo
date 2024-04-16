@@ -61,7 +61,7 @@ body{
 #forms{
     display:none;
     flex-direction:column;
-    height:200px;
+    height:auto;
     width:250px;
     background-color:blanchedalmond;
     position:absolute;
@@ -69,3 +69,15 @@ body{
     left:40%;
 }
 
+#inputfield{
+    display:flex;
+    margin:auto;
+    gap:4px;
+}
+#checkboxfield{
+    display:flex;
+    flex-wrap:wrap;
+    margin:auto;
+    gap:8px;
+
+}
