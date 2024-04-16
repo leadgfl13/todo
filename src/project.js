@@ -46,15 +46,23 @@ export function showTodos(projectname){
 }
 //makes a card to physically represent the todo
 function makeCard(atodo){
+    
     let card = document.createElement('div')
+    card.addEventListener('mouseenter',()=>{
+        descriptdiv.style.display = 'block'
+    })
+    card.addEventListener('mouseleave',()=>{
+        descriptdiv.style.display = 'none'
+    })
     card.setAttribute('id','todocard')
     let todoname = document.createElement('div')
     todoname.innerHTML = atodo.name
-    let description = document.createElement('div')
-    description.innerHTML =atodo.description
+    let descriptdiv = document.createElement('div')
+    descriptdiv.setAttribute('id', 'desdiv')
+    descriptdiv.innerHTML =atodo.description
     let tododate = document.createElement('div')
     tododate.innerHTML = atodo.date
-    card.append(todoname,description, tododate)
+    card.append(todoname,descriptdiv, tododate)
 
     bottomright.append(card)
     console.log(atodo.priority.value)
