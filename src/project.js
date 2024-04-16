@@ -31,13 +31,12 @@ export class makeToDo{
     }
 }
 
-
+// goes through the todo list and makes a card for each todo that matches the projectname
 export function showTodos(projectname){
     bottomright.innerHTML = ''
     for(let i = 0; i<todos.length; i++){
         if(todos[i].project == projectname){
             let thistodo = todos[i]
-            console.log("We have a match!")
             makeCard(thistodo)
             
         }

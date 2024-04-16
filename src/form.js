@@ -8,12 +8,14 @@ let checkboxfield = document.getElementById('checkboxfield')
 
 
 export function makecheckbox(){
+    checkboxfield.innerHTML =''
     for(let i =0; i<projects.length; i++){
         let test = document.createElement('input')
         Object.assign(test, {
             type: 'radio',
             id: projects[i],
-            name: "project"
+            name: "project",
+            value: projects[i].name
         })
         let label = document.createElement('label')
         label.htmlFor = 'testing'
@@ -49,12 +51,13 @@ function clearForm(){
     let labelname = document.getElementById('labelname')
     let thepriority = document.getElementsByTagName('priority')
     let radio =  document.querySelector('input[name="priority"]:checked').value;
+    let radio2 =  document.querySelector('input[name="project"]:checked').value;
 
-    console.log(radio)
-    let ntodo = new makeToDo(labelname.value, projectname.value, radio)
+console.log(radio2)
+    let ntodo = new makeToDo(labelname.value, radio2, radio)
     console.log(thepriority)
     todos.push(ntodo)
-    showTodos(projectname.value)
+    showTodos(radio2)
 
     console.log(todos.length)
     description.value = ' '

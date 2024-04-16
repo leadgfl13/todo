@@ -50,6 +50,10 @@ body{
     background-color:aqua;
 }
 
+#todocard:hover{
+    height:300px;
+}
+
 #labelname{
     text-align:center;
 }

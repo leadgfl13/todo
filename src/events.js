@@ -31,5 +31,5 @@ let todobutton = document.getElementById('addtodo')
 todobutton.addEventListener('click',()=>{
     console.log("Add todo")
     bringupForm()
-    //makecheckbox()
+    makecheckbox()
 })
