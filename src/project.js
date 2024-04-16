@@ -42,11 +42,17 @@ export function showTodos(projectname){
         }
     }
 }
-
+//makes a card to physically represent the todo
 function makeCard(atodo){
     let card = document.createElement('div')
     card.setAttribute('id','todocard')
-    card.innerHTML = atodo.name
+    let todoname = document.createElement('div')
+    //area where the todocard needs to be formatted
+    todoname.innerHTML = atodo.name
+    let description = document.createElement('div')
+    description.innerHTML =atodo.description
+    card.append(todoname,description)
+
     bottomright.append(card)
     console.log(atodo.priority.value)
     if(atodo.priority == "low"){

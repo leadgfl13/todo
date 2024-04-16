@@ -25,7 +25,10 @@ body{
 
 #bottomright{
     grid-area:2/2/3/3;
-    display:flex;
+    display:grid;
+    grid-template-rows: repeat(auto-fill, 210px);
+
+    grid-template-columns: repeat(auto-fill, 210px);
     flex-direction:row;
     gap:20px;
     background-color:tan;
@@ -40,6 +43,10 @@ body{
 }
 
 #todocard{
+    margin:5px;
+    border-radius:8px;
+    border:2px solid black;
+    box-shadow:2px 2px 2px 2px;
     justify-content:center;
     align-items:center;
     display:grid;
