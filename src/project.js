@@ -24,10 +24,12 @@ export class makeProject{
 
      //makes todo's
 export class makeToDo{
-    constructor(name, project,priority){
+    constructor(name, project,priority, description, date){
         this.name = name
         this.project = project
         this.priority = priority
+        this.description = description
+        this.date = date
     }
 }
 
@@ -47,11 +49,12 @@ function makeCard(atodo){
     let card = document.createElement('div')
     card.setAttribute('id','todocard')
     let todoname = document.createElement('div')
-    //area where the todocard needs to be formatted
     todoname.innerHTML = atodo.name
     let description = document.createElement('div')
     description.innerHTML =atodo.description
-    card.append(todoname,description)
+    let tododate = document.createElement('div')
+    tododate.innerHTML = atodo.date
+    card.append(todoname,description, tododate)
 
     bottomright.append(card)
     console.log(atodo.priority.value)

@@ -41,8 +41,6 @@ export function makecheckbox(){
 let submission = document.getElementById('subtodo')
     submission.addEventListener('click',(e)=>{
         e.preventDefault()
-        let project =projectname.value
-        console.log("I am project" + project)
         clearForm()
 
         form.style.display = 'none'
@@ -53,8 +51,10 @@ function clearForm(){
     let labelname = document.getElementById('labelname')
     let priority =  document.querySelector('input[name="priority"]:checked').value;
     let projectname =  document.querySelector('input[name="project"]:checked').value;
+    let descriptionname = document.getElementById('description').value
+    let duedate = document.getElementById('date').value
 
-    let ntodo = new makeToDo(labelname.value, projectname, priority)
+    let ntodo = new makeToDo(labelname.value, projectname, priority, descriptionname, duedate)
     todos.push(ntodo)
     showTodos(projectname)
 
