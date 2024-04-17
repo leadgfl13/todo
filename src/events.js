@@ -20,7 +20,6 @@ function showProjects(){
         project.innerHTML = currentproject.name
         bottomleft.append(project)
         project.addEventListener('click', ()=>{
-            console.log("Hello I have been clicked")
             showTodos(currentproject.name)
             })
         }
@@ -29,7 +28,6 @@ export{showProjects}
 
 let todobutton = document.getElementById('addtodo')
 todobutton.addEventListener('click',()=>{
-    console.log("Add todo")
     bringupForm()
     makecheckbox()
 })

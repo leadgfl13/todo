@@ -46,7 +46,7 @@ export function showTodos(projectname){
 }
 //makes a card to physically represent the todo
 function makeCard(atodo){
-    
+
     let card = document.createElement('div')
     card.addEventListener('mouseenter',()=>{
         descriptdiv.style.display = 'block'
@@ -62,10 +62,22 @@ function makeCard(atodo){
     descriptdiv.innerHTML =atodo.description
     let tododate = document.createElement('div')
     tododate.innerHTML = atodo.date
-    card.append(todoname,descriptdiv, tododate)
+let remove = document.createElement('button')
+remove.addEventListener('click',()=>{  // ***************** fix deletion
+    for(let i = 0; i<todos.length; i++){
+        if (todos[i].name == atodo.name){
+            console.log(i)
+        todos.splice(i,1)     
+ }
+ showTodos(atodo.project)
+
+    }
+
+})
+
+card.append(todoname,descriptdiv, tododate, remove)
 
     bottomright.append(card)
-    console.log(atodo.priority.value)
     if(atodo.priority == "low"){
         card.style.backgroundColor = 'blue'
     }

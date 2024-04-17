@@ -14,7 +14,6 @@ let addproject = document.getElementById('makeproject')
  // Make an array of todo's, give the todo's a project property
 
 addproject.addEventListener('click',()=>{
-    console.log("I've been clicked")
     let newprojectname = prompt("What is the new project name?")
     if(newprojectname == null || newprojectname == ''){
         console.log("nothing")
