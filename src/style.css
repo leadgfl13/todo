@@ -54,12 +54,16 @@ body{
     grid-template-columns:1fr;
     height:200px;
     width:200px;
-    background-color:aqua;
+    background-color:whitesmoke;
 }
 
 #todocard:hover{
     height:300px;
     z-index: 1;
+}
+
+#desdiv{
+    grid-area:3/1/4/2;
 }
 
 #labelname{
@@ -94,5 +98,17 @@ body{
 }
 
 
+#removetodo{
+    grid-area:4/1/5/2;
+    height:30px;
+    width:auto;
+    background-color:lightgray;
+    
+}
 
+#todoname{
+    grid-area:1/1/2/2;
+    font-size:auto;
+    text-align:center;
+}
 

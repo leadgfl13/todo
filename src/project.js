@@ -46,7 +46,6 @@ export function showTodos(projectname){
 }
 //makes a card to physically represent the todo
 function makeCard(atodo){
-
     let card = document.createElement('div')
     card.addEventListener('mouseenter',()=>{
         descriptdiv.style.display = 'block'
@@ -57,18 +56,23 @@ function makeCard(atodo){
     card.setAttribute('id','todocard')
     let todoname = document.createElement('div')
     todoname.innerHTML = atodo.name
+    todoname.setAttribute('id', 'todoname')
     let descriptdiv = document.createElement('div')
     descriptdiv.setAttribute('id', 'desdiv')
     descriptdiv.innerHTML =atodo.description
     let tododate = document.createElement('div')
     tododate.innerHTML = atodo.date
 let remove = document.createElement('button')
+remove.setAttribute('id','removetodo')
+remove.innerHTML = 'Delete'
 remove.addEventListener('click',()=>{  // ***************** fix deletion
     for(let i = 0; i<todos.length; i++){
         if (todos[i].name == atodo.name){
             console.log(i)
         todos.splice(i,1)     
  }
+ todos.sort(function(high, med, low){return high-med-low});
+
  showTodos(atodo.project)
 
     }
@@ -79,14 +83,14 @@ card.append(todoname,descriptdiv, tododate, remove)
 
     bottomright.append(card)
     if(atodo.priority == "low"){
-        card.style.backgroundColor = 'blue'
+        card.style.border = '4px solid blue'
     }
     if(atodo.priority == "med"){
-        card.style.backgroundColor = 'green'
+        card.style.border = '4px solid green'
     }
    
      if(atodo.priority == "high"){
-        card.style.backgroundColor = 'red'
+        card.style.border = '4px solid red'
     }
 
 }
