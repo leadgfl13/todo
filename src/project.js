@@ -71,6 +71,7 @@ remove.addEventListener('click',()=>{  // ***************** fix deletion
             console.log(i)
         todos.splice(i,1)     
  }
+
  todos.sort(function(high, med, low){return high-med-low});
 
  showTodos(atodo.project)
@@ -78,8 +79,14 @@ remove.addEventListener('click',()=>{  // ***************** fix deletion
     }
 
 })
-
-card.append(todoname,descriptdiv, tododate, remove)
+let edit = document.createElement('button')
+edit.setAttribute('id', 'edit')
+edit.innerHTML ='Edit'
+edit.addEventListener('click',(e)=>{
+    e.preventDefault
+    console.log("test")
+    makeChanges(atodo)})
+    card.append(todoname,descriptdiv, tododate, remove, edit)
 
     bottomright.append(card)
     if(atodo.priority == "low"){
@@ -95,6 +102,26 @@ card.append(todoname,descriptdiv, tododate, remove)
 
 }
 
+
+function makeChanges(atodo){
+    let aform = document.createElement('div')
+    aform.setAttribute('id','editform')
+    let nameinput = document.createElement('input')
+    let saveedit = document.createElement('button')
+    saveedit.innerHTML = 'Save changes'
+    saveedit.addEventListener('click',()=>{
+        atodo.name = nameinput.value
+        aform.style.display = 'none'
+        showTodos(atodo.project)
+    })
+    aform.append(nameinput, saveedit)
+    document.body.append(aform)
+
+    
+    
+    
+
+}
 
 
 
