@@ -104,17 +104,24 @@ edit.addEventListener('click',(e)=>{
 
 
 function makeChanges(atodo){
+    let formbox = document.createElement('div')
+    formbox.setAttribute('id','editbox')
     let aform = document.createElement('div')
     aform.setAttribute('id','editform')
     let nameinput = document.createElement('input')
+    nameinput.setAttribute('placeholder', 'Change name')
+    let editdescript = document.createElement('input')
+    editdescript.setAttribute('placeholder', 'Change description')
     let saveedit = document.createElement('button')
     saveedit.innerHTML = 'Save changes'
     saveedit.addEventListener('click',()=>{
         atodo.name = nameinput.value
+        atodo.description = editdescript.value
         aform.style.display = 'none'
         showTodos(atodo.project)
     })
-    aform.append(nameinput, saveedit)
+    formbox.append(aform)
+    aform.append(nameinput, editdescript, saveedit)
     document.body.append(aform)
 
     

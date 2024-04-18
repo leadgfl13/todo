@@ -114,8 +114,10 @@ body{
 
 #editform{
     position:absolute;
-    top:20%;
-    left:20%;
-    height:300px;
+    top:40%;
+    left:40%;
+    height:400px;
     display:flex;
+    flex-direction:column;
 }
+
