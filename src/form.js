@@ -2,9 +2,12 @@ import {todos} from "./events"
 import { makeToDo } from "./project"
 import {projects} from "./events"
 import { showTodos } from "./project"
+import { format, compareAsc } from "date-fns"
+
 
 let form = document.getElementById('forms')
 let checkboxfield = document.getElementById('checkboxfield')
+
 
 
 export function makecheckbox(){
@@ -52,7 +55,11 @@ function clearForm(){
     let priority =  document.querySelector('input[name="priority"]:checked').value;
     let projectname =  document.querySelector('input[name="project"]:checked').value;
     let descriptionname = document.getElementById('description').value
-    let duedate = document.getElementById('date').value
+    let date = (document.getElementById('date').value)
+    const dateArray = date.split("/");
+
+    // Need to parse the value into three categories
+    let duedate = format(new Date(date), "MM/dd/yyyy");
 
     let ntodo = new makeToDo(labelname.value, projectname, priority, descriptionname, duedate)
     todos.push(ntodo)
@@ -61,7 +68,7 @@ function clearForm(){
     console.log(todos.length)
     description.value = ' '
     labelname.value =' '
-    date.value = 0
+    date.innerHTML = ''
 }
 export{clearForm}
 
