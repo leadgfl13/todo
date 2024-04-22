@@ -55,20 +55,15 @@ function clearForm(){
     let priority =  document.querySelector('input[name="priority"]:checked').value;
     let projectname =  document.querySelector('input[name="project"]:checked').value;
     let descriptionname = document.getElementById('description').value
-    let date = (document.getElementById('date').value)
-    const dateArray = date.split("/");
-
-    // Need to parse the value into three categories
-    let duedate = format(new Date(date), "MM/dd/yyyy");
-
+    let datevalue = (document.getElementById('date').value)
+    let duedate = format(new Date(datevalue), "MM/dd/yyyy");
     let ntodo = new makeToDo(labelname.value, projectname, priority, descriptionname, duedate)
     todos.push(ntodo)
     showTodos(projectname)
-
     console.log(todos.length)
     description.value = ' '
     labelname.value =' '
-    date.innerHTML = ''
+    date.value = ''
 }
 export{clearForm}
 

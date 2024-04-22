@@ -1,4 +1,5 @@
 // class for making aproject
+import { format, compareAsc } from "date-fns"
 import{todos} from "./events"
 import {displayPage} from './form.js'
 import { bringupForm } from './form.js'
@@ -40,10 +41,11 @@ export function showTodos(projectname){
         if(todos[i].project == projectname){
             let thistodo = todos[i]
             makeCard(thistodo)
-            
-        }
-    }
+            }
+         }
 }
+
+
 //makes a card to physically represent the todo
 function makeCard(atodo){
     let card = document.createElement('div')
@@ -61,7 +63,7 @@ function makeCard(atodo){
     descriptdiv.setAttribute('id', 'desdiv')
     descriptdiv.innerHTML =atodo.description
     let tododate = document.createElement('div')
-    tododate.innerHTML = atodo.date
+    tododate.innerHTML = "Due: " + atodo.date
 let remove = document.createElement('button')
 remove.setAttribute('id','removetodo')
 remove.innerHTML = 'Delete'
@@ -102,26 +104,49 @@ edit.addEventListener('click',(e)=>{
 
 }
 
-
+//Function to allow changes to the particular todo
 function makeChanges(atodo){
     let formbox = document.createElement('div')
     formbox.setAttribute('id','editbox')
     let aform = document.createElement('div')
-    aform.setAttribute('id','editform')
-    let nameinput = document.createElement('input')
-    nameinput.setAttribute('placeholder', 'Change name')
+    aform.setAttribute('id','editform')  
+ let nameinput = document.createElement('input')
+ let namelabel = document.createElement('label')
+    nameinput.setAttribute('placeholder', 'changename')
+    namelabel.setAttribute('for','changename')
+    namelabel.innerHTML = "New name"
     let editdescript = document.createElement('input')
     editdescript.setAttribute('placeholder', 'Change description')
     let saveedit = document.createElement('button')
     saveedit.innerHTML = 'Save changes'
+    let editdate = document.createElement('input')
+    editdate.setAttribute('placeholder', 'MM DD YY')
+
+
     saveedit.addEventListener('click',()=>{
-        atodo.name = nameinput.value
-        atodo.description = editdescript.value
+        if(nameinput.value == ''){
+            atodo.name = atodo.name
+        }
+        else{
+            atodo.name = nameinput.value
+        }
+        if(editdescript.value == ''){
+            atodo.description = atodo.description
+        }
+        else{
+            atodo.description = editdescript.value
+        }
+        if(editdate.value == ''){
+            atodo.date = atodo.date
+        }
+        else{
+            atodo.date  = format(new Date(editdate.value), "MM/dd/yyyy");
+        }
         aform.style.display = 'none'
         showTodos(atodo.project)
     })
     formbox.append(aform)
-    aform.append(nameinput, editdescript, saveedit)
+    aform.append(namelabel,nameinput, editdescript, saveedit, editdate)
     document.body.append(aform)
 
     
