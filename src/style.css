@@ -43,6 +43,7 @@ body{
 }
 
 #todocard{
+    position:relative;
     margin:5px;
     border-radius:8px;
     border:2px solid black;
@@ -99,12 +100,29 @@ body{
 
 
 #removetodo{
-    grid-area:4/1/5/2;
+    background-image:url('../images/delete.png');
     height:30px;
-    width:auto;
-    background-color:lightgray;
-    
+    width:30px;
+position:absolute;
+    top:5px;
+    right:5px;
+    background-repeat: no-repeat;
+    background-size:cover;
 }
+
+#edit{
+    background-image:url('../images/edit.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:30px;
+    width:30px;
+    position:absolute;
+    bottom:5px;
+    right:5px;
+}
+
+
+
 
 #todoname{
     grid-area:1/1/2/2;
@@ -113,12 +131,21 @@ body{
 }
 
 #editform{
+    gap:5px;
     position:absolute;
     top:40%;
     left:40%;
-    height:400px;
+    height:300px;
+    width:300px;
+    box-shadow: 2px 2px 2px 2px;
+    border-radius:8px;
+    border:solid gray 4px;
     display:flex;
     flex-direction:column;
     background-color:lightslategray;
 }
 
+input:active{
+    background-color: skyblue;
+
+}

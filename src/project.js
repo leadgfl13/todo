@@ -66,7 +66,6 @@ function makeCard(atodo){
     tododate.innerHTML = "Due: " + atodo.date
 let remove = document.createElement('button')
 remove.setAttribute('id','removetodo')
-remove.innerHTML = 'Delete'
 remove.addEventListener('click',()=>{  // ***************** fix deletion
     for(let i = 0; i<todos.length; i++){
         if (todos[i].name == atodo.name){
@@ -83,7 +82,6 @@ remove.addEventListener('click',()=>{  // ***************** fix deletion
 })
 let edit = document.createElement('button')
 edit.setAttribute('id', 'edit')
-edit.innerHTML ='Edit'
 edit.addEventListener('click',(e)=>{
     e.preventDefault
     console.log("test")
@@ -120,7 +118,7 @@ function makeChanges(atodo){
     let saveedit = document.createElement('button')
     saveedit.innerHTML = 'Save changes'
     let editdate = document.createElement('input')
-    editdate.setAttribute('placeholder', 'MM DD YY')
+    editdate.setAttribute('placeholder', 'MM/DD/YY')
 
 
     saveedit.addEventListener('click',()=>{
@@ -146,7 +144,7 @@ function makeChanges(atodo){
         showTodos(atodo.project)
     })
     formbox.append(aform)
-    aform.append(namelabel,nameinput, editdescript, saveedit, editdate)
+    aform.append(namelabel,nameinput, editdescript,editdate, saveedit)
     document.body.append(aform)
 
     
