@@ -4,6 +4,8 @@ import style from './style.css'
 import { showProjects } from './events'
 import { clearForm } from './form'
 import  {projects }from './events'
+showProjects()
+console.log(projects.length)
 
 
 let bottomleft = document.getElementById('bottomleft')
@@ -20,8 +22,11 @@ addproject.addEventListener('click',()=>{
         return
     }
     else{
-        let newproject = new makeProject(newprojectname)
-            newproject.addProject()
+        let newproject = new makeProject(newprojectname) //makes a new project
+            newproject.addProject() //adds project to the array
+            let projectsstring = JSON.stringify(projects)
+            localStorage.setItem('projectsstring',projectsstring)
+            console.log(projectsstring)
             showProjects()
     }
 })
