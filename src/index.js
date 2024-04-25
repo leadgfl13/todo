@@ -24,9 +24,9 @@ addproject.addEventListener('click',()=>{
     else{
         let newproject = new makeProject(newprojectname) //makes a new project
             newproject.addProject() //adds project to the array
-            let projectsstring = JSON.stringify(projects)
-            localStorage.setItem('projectsstring',projectsstring)
-            console.log(projectsstring)
+            let projectsstring = JSON.stringify(newproject)
+            localStorage.setItem('projectsstring',newproject)
+            console.log(newproject)
             showProjects()
     }
 })

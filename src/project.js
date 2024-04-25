@@ -19,7 +19,10 @@ export class makeProject{
 //adds this project to the project array
      addProject(){
         projects.push(this)
+        localStorage.setItem('projectlist', JSON.stringify(projects) )
      }  
+
+    
     }
 
 
