@@ -11,8 +11,11 @@ console.log(projects.length)
 let bottomleft = document.getElementById('bottomleft')
 let addproject = document.getElementById('makeproject')
  //initial default project
- let test = new makeProject('test')
- test.addProject()
+ if (projects.length ==0){
+    let home = new makeProject("Home")
+    home.addProject()
+ }
+
  // Make an array of todo's, give the todo's a project property
 
 addproject.addEventListener('click',()=>{
