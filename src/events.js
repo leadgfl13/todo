@@ -17,9 +17,20 @@ function showProjects(){
 
     for(let i = 0; i<projects.length; i++){
         let currentproject = projects[i]
+        let container = document.createElement('div')
         let project = document.createElement('button')
+        container.append(project)
+        container.setAttribute('id','container')
+        project.setAttribute('id','project')
+        let deleteproject = document.createElement('button')
+        container.append(deleteproject)
+        deleteproject.setAttribute('id', 'deleteproject')
+        deleteproject.addEventListener('click',()=>{
+            console.log(projects[i].name + " has  been clicked")
+        })
         project.innerHTML = currentproject.name
-        bottomleft.append(project)
+        bottomleft.append(container)
+    
         project.addEventListener('click', ()=>{
             showTodos(currentproject.name)
             })

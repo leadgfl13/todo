@@ -103,7 +103,7 @@ body{
     background-image:url('../images/delete.png');
     height:30px;
     width:30px;
-position:absolute;
+    position:absolute;
     top:5px;
     right:5px;
     background-repeat: no-repeat;
@@ -148,4 +148,25 @@ position:absolute;
 input:active{
     background-color: skyblue;
 
+}
+
+#container{
+    display:grid;
+    grid-template-rows:1fr;
+    grid-template-columns: 3fr 1fr;
+    height:40px;
+    width:auto;
+    font-size:14px;
+}
+
+#project{
+    grid-area:1/1/2/2
+}
+
+#deleteproject{
+    grid-area:1/2/2/3;
+    background-image:url('../images/delete.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;
 }
