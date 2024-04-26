@@ -85,7 +85,7 @@ remove.addEventListener('click',()=>{
         if(removelist[i].name === atodo.name){
             removelist.splice(i,1) 
             console.log(removelist + 'item removed')
-            localStorage.setItem('todolist', JSON.stringify(removelist))
+            localStorage.setItem('todolist', JSON.stringify(todos))
         }
     }
     showTodos(atodo.project)
@@ -151,9 +151,13 @@ function makeChanges(atodo){
         else{
             atodo.date  = format(new Date(editdate.value), "MM/dd/yyyy");
         }
+        localStorage.setItem('todolist', JSON.stringify(todos) )
         aform.style.display = 'none'
+
         showTodos(atodo.project)
-    })
+
+    }
+    )
     formbox.append(aform)
     aform.append(namelabel,nameinput, editdescript,editdate, saveedit)
     document.body.append(aform)
