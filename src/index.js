@@ -4,17 +4,23 @@ import style from './style.css'
 import { showProjects } from './events'
 import { clearForm } from './form'
 import  {projects }from './events'
+import { showTodos } from './project'
+
 showProjects()
 console.log(projects.length)
+
 
 
 let bottomleft = document.getElementById('bottomleft')
 let addproject = document.getElementById('makeproject')
  //initial default project
- if (projects.length ==0){
+ if (projects.length == 0){
     let home = new makeProject("Home")
     home.addProject()
  }
+ 
+ showTodos(projects[0].name)
+
 
  // Make an array of todo's, give the todo's a project property
 

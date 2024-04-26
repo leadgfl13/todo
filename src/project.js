@@ -44,9 +44,14 @@ export function showTodos(projectname){
         if(todos[i].project == projectname){
             let thistodo = todos[i]
             makeCard(thistodo)
-            }
+        }
+    
          }
-}
+         if (bottomright.innerHTML == ''){
+            bottomright.innerHTML = 'No todos'
+         }
+        }
+
 
 
 //makes a card to physically represent the todo
