@@ -3,7 +3,7 @@ import {showTodos} from "./project"
 import {makecheckbox} from "./form"
 
  let projects = JSON.parse(localStorage.getItem('projectlist')) || []
- let todos = []
+ let todos = JSON.parse(localStorage.getItem('todolist')) || []
 
 export {projects}
 export {todos}

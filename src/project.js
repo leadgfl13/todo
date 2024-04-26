@@ -69,18 +69,26 @@ function makeCard(atodo){
     tododate.innerHTML = "Due: " + atodo.date
 let remove = document.createElement('button')
 remove.setAttribute('id','removetodo')
-remove.addEventListener('click',()=>{  // ***************** fix deletion
+remove.addEventListener('click',()=>{
     for(let i = 0; i<todos.length; i++){
         if (todos[i].name == atodo.name){
             console.log(i)
-        todos.splice(i,1)     
+            todos.splice(i,1)     
  }
-
- todos.sort(function(high, med, low){return high-med-low});
-
- showTodos(atodo.project)
-
     }
+
+
+    let removelist = JSON.parse(localStorage.getItem('todolist'))
+    console.log(removelist)
+    console.log(removelist)
+    for(let i = 0; i<removelist.length; i++){
+        if(removelist[i].name === atodo.name){
+            removelist.splice(i,1) 
+            console.log(removelist + 'item removed')
+            localStorage.setItem('todolist', JSON.stringify(removelist))
+        }
+    }
+    showTodos(atodo.project)
 
 })
 let edit = document.createElement('button')
