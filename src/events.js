@@ -27,6 +27,17 @@ function showProjects(){
         deleteproject.setAttribute('id', 'deleteproject')
         deleteproject.addEventListener('click',()=>{
             console.log(projects[i].name + " has  been clicked")
+            let removelist = JSON.parse(localStorage.getItem('projectlist'))
+            // Need to remove the project name and update the localstorage with setItem, do same for any todos that match
+            for(let i =0; i<projects.length; i++){
+                if(currentproject == projects[i])
+                projects.splice(i,1)
+                removelist.splice(i,1)
+                localStorage.setItem('projectlist', JSON.stringify(projects))                 
+                showProjects()
+            }
+           
+        
         })
         project.innerHTML = currentproject.name
         bottomleft.append(container)
