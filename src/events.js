@@ -28,14 +28,28 @@ function showProjects(){
         deleteproject.addEventListener('click',()=>{
             console.log(projects[i].name + " has  been clicked")
             let removelist = JSON.parse(localStorage.getItem('projectlist'))
-            // Need to remove the project name and update the localstorage with setItem, do same for any todos that match
+            let removetodos = JSON.parse(localStorage.getItem('todolist'))
+            // Need to remove the project name and update the localstorage
+            for(let i =0; i<todos.length;i++){
+                if(projects[i].name == todos[i].project){
+                    console.log(todos[i].name + "There is a match")
+                    removetodos.splice(i,1)
+                    todos.splice(i,1)
+                    localStorage.setItem('todolist', JSON.stringify(todos)) 
+                    showTodos()                
+
+
+                }
+            }
             for(let i =0; i<projects.length; i++){
                 if(currentproject == projects[i])
                 projects.splice(i,1)
                 removelist.splice(i,1)
                 localStorage.setItem('projectlist', JSON.stringify(projects))                 
                 showProjects()
+                
             }
+            //do same for any todos that match for
            
         
         })
