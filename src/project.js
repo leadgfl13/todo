@@ -39,7 +39,13 @@ export class makeToDo{
 
 // goes through the todo list and makes a card for each todo that matches the projectname
 export function showTodos(projectname){
+    let bottomright=document.getElementById('bottomright')
     bottomright.innerHTML = ''
+   let heading = document.createElement('div')
+   heading.setAttribute('id', 'heading')
+   heading.innerHTML = projectname
+   bottomright.append(heading)
+    
     for(let i = 0; i<todos.length; i++){
         if(todos[i].project == projectname){
             let thistodo = todos[i]
@@ -48,7 +54,8 @@ export function showTodos(projectname){
     
          }
          if (bottomright.innerHTML == ''){
-            bottomright.innerHTML = 'No todos'
+            bottomright.style.fontSize = '48px'
+            bottomright.innerHTML = 'No todos currently!'
          }
         }
 
@@ -82,10 +89,7 @@ remove.addEventListener('click',()=>{
  }
     }
 
-
     let removelist = JSON.parse(localStorage.getItem('todolist'))
-    console.log(removelist)
-    console.log(removelist)
     for(let i = 0; i<removelist.length; i++){
         if(removelist[i].name === atodo.name){
             removelist.splice(i,1) 
