@@ -41,11 +41,8 @@ export class makeToDo{
 export function showTodos(projectname){
     let bottomright=document.getElementById('bottomright')
     bottomright.innerHTML = ''
-   let heading = document.createElement('div')
-   heading.setAttribute('id', 'heading')
-   heading.innerHTML = projectname
-   bottomright.append(heading)
-    
+    let heading = document.getElementById('heading')
+    heading.innerHTML = projectname
     for(let i = 0; i<todos.length; i++){
         if(todos[i].project == projectname){
             let thistodo = todos[i]
