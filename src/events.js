@@ -15,7 +15,6 @@ export {todos}
 //creates a list of current project buttons 
 function showProjects(){
     bottomleft.innerHTML = '' 
-// NNED TO FIX THIS STILL!!!!!!!-----------------------------------------------------------------------------------------
     let removelist = JSON.parse(localStorage.getItem('projectlist'))
     for(let i = 0; i<projects.length; i++){
         let container = document.createElement('div')
@@ -48,7 +47,7 @@ function showProjects(){
 
                 }
                 
-                showTodos(projects[i])
+                showTodos(projects[0].name)
             
             // deletes the project from the localstorage
                 
