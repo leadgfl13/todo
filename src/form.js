@@ -13,6 +13,12 @@ let checkboxfield = document.getElementById('checkboxfield')
 export function makecheckbox(){
     checkboxfield.innerHTML =''
     for(let i =0; i<projects.length; i++){
+        let label = document.createElement('label')
+        label.htmlFor = 'testing'
+        Object.assign(label, {
+            innerHTML: projects[i].name,
+            id: 'labeltesting',
+        })
         let inputfield = document.createElement('div')
         inputfield.setAttribute('class', 'inputfield')
         let test = document.createElement('input')
@@ -22,14 +28,9 @@ export function makecheckbox(){
             name: "project",
             value: projects[i].name
         })
-        let label = document.createElement('label')
-        label.htmlFor = 'testing'
-        Object.assign(label, {
-            innerHTML: projects[i].name,
-            id: 'labeltesting',
-        })
       
-        inputfield.append(label,test)
+      
+        inputfield.append(test, label)
         checkboxfield.append(inputfield)
 
     }

@@ -52,7 +52,7 @@ export function showTodos(projectname){
          }
          if (bottomright.innerHTML == ''){
             bottomright.style.fontSize = '48px'
-            bottomright.innerHTML = 'No todos currently!'
+            heading.innerHTML =  ' No todos in ' + projectname
          }
         }
 

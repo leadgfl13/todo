@@ -25,13 +25,19 @@
     <button id = 'makeproject'>Add Project</button>
 
     <form  id ='forms' action="">
-        <label for="labelname">Name</label>
-        <input type="text" id = 'labelname'>
+        <div id="inputcontainer">
+            <label for="labelname">Name</label>
+            <input type="text" id = 'labelname'>
+        </div>
+       
         <div id="checkboxfield">
 
         </div>
-        <label for="description">Description</label>
-        <input type="text" id = 'description'>
+        <div id="inputcontainer">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="5" cols="33">
+Give a description                </textarea>        </div>
+        
         <legend>Priority
 
              <div id = 'radiobox'>

@@ -3,6 +3,33 @@ body{
     margin:0px;
 }
 
+#checkboxfield{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:40px;
+
+
+}
+
+.inputfield{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    
+   
+
+}
+
+
+#inputcontainer{
+    display:flex;
+    flex-direction:row;
+ align-items:Center;
+}
+#radiobox{
+
+}
+
 #pagelayout{
     height:100vh;
     width:100%;
@@ -48,10 +75,12 @@ label{
     text-align: center;;
 }
 #todocard{
-
+    padding:10px;
+    font-size:22px;
     position:relative;
-    margin:5px;
-    border-radius:8px;
+    margin:10px;
+    padding-top:20px;
+    border-radius:14px;
     border:6px solid black;
     box-shadow:2px 2px 2px 2px;
     justify-content:center;
@@ -59,9 +88,10 @@ label{
     display:grid;
     grid-template-rows:1fr 1fr 1fr 1fr;
     grid-template-columns:1fr;
-    height:200px;
+    height:auto;
     width:200px;
     background-color:whitesmoke;
+    box-shadow: 2px 2px 2px 2px;
 }
 
 #todocard:hover{
@@ -78,11 +108,14 @@ label{
 }
 
 #forms{
+    border-radius:8px;
+    padding:10px;
+    box-shadow:2px 2px 2px 2px;
     font-size:20px;
     display:none;
     flex-direction:column;
     height:auto;
-    width:250px;
+    width:auto;
     background-color:blanchedalmond;
     position:absolute;
     top:40%;
@@ -101,11 +134,7 @@ label{
 
 }
 
-#inputfield{
-    display:flex;
-    margin:auto;
-    gap:4px;
-}
+
 #checkboxfield{
     display:flex;
     flex-wrap:wrap;
