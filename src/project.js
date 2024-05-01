@@ -126,13 +126,11 @@ function makeChanges(atodo){
     let aform = document.createElement('div')
     aform.setAttribute('id','editform')  
  let nameinput = document.createElement('input')
- let namelabel = document.createElement('label')
     nameinput.setAttribute('placeholder', 'changename')
-    namelabel.setAttribute('for','changename')
-    namelabel.innerHTML = "New name"
     let editdescript = document.createElement('input')
     editdescript.setAttribute('placeholder', 'Change description')
     let saveedit = document.createElement('button')
+    saveedit.setAttribute('id', 'saveedit')
     saveedit.innerHTML = 'Save changes'
     let editdate = document.createElement('input')
     editdate.setAttribute('placeholder', 'MM/DD/YY')
@@ -165,7 +163,7 @@ function makeChanges(atodo){
     }
     )
     formbox.append(aform)
-    aform.append(namelabel,nameinput, editdescript,editdate, saveedit)
+    aform.append(nameinput, editdescript,editdate, saveedit)
     document.body.append(aform)
 
     

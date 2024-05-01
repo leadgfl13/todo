@@ -23,22 +23,32 @@
 
 
     <button id = 'makeproject'>Add Project</button>
-
+  
     <form  id ='forms' action="">
-        <div id="inputcontainer">
+        <div id="inputcontainer"><!--Name-->
             <label for="labelname">Name</label>
             <input type="text" id = 'labelname'>
         </div>
-       
-        <div id="checkboxfield">
-
-        </div>
-        <div id="inputcontainer">
+    
+        <div id="descriptioncontainer"><!--Description-->
             <label for="description">Description:</label>
-            <textarea id="description" name="description" rows="5" cols="33">
-Give a description                </textarea>        </div>
+            <textarea id="description" name="description" rows="5" cols="25">
+Give a description                </textarea>        
+</div>
+<div id="inputcontainer"><!-- Due date-->
+    <label for="date" >Due date</label>
+<input type="text" placeholder = 'MM/DD/YY' id = 'date'>
+ </div>
+
+ <label for= "checkboxfield" id = 'checkers'>Project</label>
+
+       <div id="checboxinput"><!--Project-->
+        <div id="checkboxfield"></div> 
+       </div>
         
-        <legend>Priority
+        
+        <div id="legendlabel">Priority</div><!--Priority-->
+        <legend>
 
              <div id = 'radiobox'>
                 <input type="radio"  id = 'low' name = 'priority' value = 'low'>
@@ -50,9 +60,9 @@ Give a description                </textarea>        </div>
             </div>
          </legend>
 
+
+         
         
-        <label for="date" >Due date</label>
-        <input type="text" placeholder = 'MM/DD/YY' id = 'date'>
         <div id="buttoncontainer">
             <button id = 'subtodo'>Submit to do</button>
         <button id = 'canceltodo'>Cancel</button>

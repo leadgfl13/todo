@@ -20,11 +20,11 @@ export function makecheckbox(){
             id: 'labeltesting',
         })
         let inputfield = document.createElement('div')
-        inputfield.setAttribute('class', 'inputfield')
+        inputfield.setAttribute('class', 'checkfield')
         let test = document.createElement('input')
         Object.assign(test, {
             type: 'radio',
-            id: projects[i],
+            id: projects[i].name,
             name: "project",
             value: projects[i].name
         })
