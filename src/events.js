@@ -18,6 +18,7 @@ function showProjects(){
     let removelist = JSON.parse(localStorage.getItem('projectlist'))
     for(let i = 0; i<projects.length; i++){
         let container = document.createElement('div')
+        container.setAttribute('id', 'leftcontainer')
         let project = document.createElement('button')
         container.append(project)
         container.setAttribute('id','container')

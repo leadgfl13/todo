@@ -97,9 +97,10 @@ align-items:center;}
 #bottomleft{
     grid-area:2/1/4/2;
     display:flex;
-    background-color: aliceblue;
+    background-color: rgb(67, 99, 67);
     flex-direction:column;
     gap:10px;
+    border:8px groove rgba(197, 110, 39, 0.72);
 }
 label{
     text-align: center;;
