@@ -1,4 +1,14 @@
-body{
+
+
+@font-face {
+    font-family: 'chalk';
+    src: url('./chalk.otf') format('woff2'),
+      url('./chalk.otf') format('woff');
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  body{
     background-color:gray;
     margin:0px;
 }
@@ -72,7 +82,7 @@ align-items:center;}
 }
 #project{
     grid-area:1/1/2/2;
-
+    font-family:'chalk';
     height:40px;
     width:100%;
     font-size:20px;
@@ -106,12 +116,12 @@ label{
     text-align: center;;
 }
 #todocard{
-    
+    font-family:'chalk';
+    font-size:12px;
     background-image:url('../images/stickynote3.png');
     background-repeat: no-repeat;
     background-size:cover;
     padding:10px;
-    font-size:22px;
     position:relative;
     margin:10px;
     padding-top:20px;
@@ -121,9 +131,10 @@ label{
     justify-content:center;
     align-items:center;
     display:grid;
-    grid-template-rows:1fr 1fr 1fr 1fr;
-    grid-template-columns:1fr;
-    height:auto;
+   display:flex;
+   flex-direction:column;
+    height:200px;
+    gap:40px;
     width:auto;
     background-color:whitesmoke;
     box-shadow: 2px 2px 2px 2px;
@@ -207,7 +218,24 @@ label{
 
 
 #todoname{
-    grid-area:1/1/2/2;
+    font-weight:800;
+    font:bold;
+    text-decoration:underline;
+    font-size:auto;
+    font-size:18px;
+    text-align:center;
+}
+#tododoate{
+    font-weight: 900;
+    text-decoration:underline;
+    font-size:18px;
+    text-align:center;
+
+}
+#descriptdiv{
+    font-weight:800;
+    font:bold;
+    text-decoration:underline;
     font-size:auto;
     text-align:center;
 }
@@ -266,11 +294,15 @@ input:active{
 #addtodo, #makeproject{
     height:100%;
     width:100%;
-    font-size:40px;
+    font-size:28px;;
     position:center;
     margin:auto;
+    border: 4px gray groove;
     border-radius:20px;
-    background-color:lightgray;
+    background-color:black;
+    font-family:'chalk';
+    color:white;
+
 }
 
 #topright, #topleft{
@@ -285,12 +317,13 @@ align-items:center;
 }
 
 #heading{ 
+    font-family:'chalk';
     font-weight: 600;
     grid-area:2/2/3/3;
     margin-right:0px;
     border:4px black solid;
     text-align: center; 
-    background-image:url('../images/corkboard.jpeg');
+    background-color: rgb(67, 99, 67);
     font-size:48px;
     text-decoration: underline;
    

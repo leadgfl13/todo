@@ -103,7 +103,7 @@ edit.addEventListener('click',(e)=>{
     e.preventDefault
     console.log("test")
     makeChanges(atodo)})
-    card.append(todoname,descriptdiv, tododate, remove, edit)
+    card.append(todoname, tododate,descriptdiv, remove, edit)
 
     bottomright.append(card)
     if(atodo.priority == "low"){
