@@ -43,6 +43,28 @@ export function makecheckbox(){
 
 
 let submission = document.getElementById('subtodo')
+let cancel = document.getElementById('canceltodo')
+cancel.addEventListener('click',(e)=>{
+    e.preventDefault()
+    let name = document.getElementById('labelname')
+    let description = document.getElementById('description')
+    let date = document.getElementById('date')
+    let low = document.getElementById('low')
+    let med = document.getElementById('med')
+    let high = document.getElementById('high')
+    let projectcheck = document.getElementById('checkers')
+    projectcheck.value = ''
+    low.checked = false
+    med.checked = false
+    high.checked = false
+    checkers.value = ''
+    date.value = ''
+    name.value = ' '
+    description.value = ''
+    let form = document.getElementById('forms')
+    form.style.display = 'none'
+    return
+})
     submission.addEventListener('click',(e)=>{
         e.preventDefault()
         clearForm()
