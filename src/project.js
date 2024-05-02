@@ -124,6 +124,49 @@ function makeChanges(atodo){
     let formbox = document.createElement('div')
     formbox.setAttribute('id','editbox')
     let aform = document.createElement('div')
+    let editradio = document.createElement('div')
+    editradio.setAttribute('id','editradio')
+    //test to add radio
+    let lowlabel = document.createElement('label')
+    let lowinput = document.createElement('input')
+    Object.assign(lowlabel, {
+        innerHTML: 'low',
+        for: 'editlow',
+    })
+    Object.assign(lowinput, {
+        type: 'radio',
+        id: 'editlow',
+        name: 'priority',
+        value:'low'
+    })
+    let medlabel = document.createElement('label')
+    let medinput = document.createElement('input')
+    Object.assign(medlabel, {
+        innerHTML: 'med',
+        for: 'editmed',
+    })
+    Object.assign(medinput, {
+        type: 'radio',
+        id: 'editmed',
+        name: 'priority',
+        value:'med'
+    })
+    let highlabel = document.createElement('label')
+    let highinput = document.createElement('input')
+    Object.assign(highlabel, {
+        innerHTML: 'high',
+        for: 'edithigh',
+    })
+    Object.assign(highinput, {
+        type: 'radio',
+        id: 'edithigh',
+        name: 'priority',
+        value:'high'
+    })
+
+editradio.append(lowlabel,lowinput, medlabel, medinput, highlabel, highinput)
+    
+    
     aform.setAttribute('id','editform')  
  let nameinput = document.createElement('input')
     nameinput.setAttribute('placeholder', 'changename')
@@ -155,6 +198,21 @@ function makeChanges(atodo){
         else{
             atodo.date  = format(new Date(editdate.value), "MM/dd/yyyy");
         }
+        if(lowinput.value == '' ||medinput.value == ''  || highinput.value == ''){
+            atodo.priority ==atodo.priority
+        }
+        else{
+            if(lowinput.checked ==true){ 
+            atodo.priority=lowinput.value
+            }
+            if(medinput.checked ==true){
+            atodo.priority=medinput.value
+            }
+            if(highinput.checked ==true){
+                atodo.priority=highinput.value
+                }
+        }
+
         localStorage.setItem('todolist', JSON.stringify(todos) )
         aform.style.display = 'none'
 
@@ -163,7 +221,7 @@ function makeChanges(atodo){
     }
     )
     formbox.append(aform)
-    aform.append(nameinput, editdescript,editdate, saveedit)
+    aform.append(nameinput, editdescript,editdate, editradio,saveedit)
     document.body.append(aform)
 
     
