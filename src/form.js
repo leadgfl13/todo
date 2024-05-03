@@ -7,9 +7,11 @@ import { format, compareAsc } from "date-fns"
 
 let form = document.getElementById('forms')
 let checkboxfield = document.getElementById('checkboxfield')
+let submission = document.getElementById('subtodo')
+let cancel = document.getElementById('canceltodo')
 
 
-
+//makes the project selection for each todo
 export function makecheckbox(){
     checkboxfield.innerHTML =''
     for(let i =0; i<projects.length; i++){
@@ -28,22 +30,15 @@ export function makecheckbox(){
             name: "project",
             value: projects[i].name
         })
-      
-      
         inputfield.append(test, label)
         checkboxfield.append(inputfield)
-
     }
-
-
 }
 
 
 
 
-
-let submission = document.getElementById('subtodo')
-let cancel = document.getElementById('canceltodo')
+//adds functionality to cancel, clears all values
 cancel.addEventListener('click',(e)=>{
     e.preventDefault()
     let name = document.getElementById('labelname')
@@ -80,7 +75,7 @@ function clearForm(){
     let descriptionname = document.getElementById('description').value
     let datevalue = (document.getElementById('date').value)
     let duedate = format(new Date(datevalue), "MM/dd/yyyy");
-    let ntodo = new makeToDo(labelname.value, projectname, priority, descriptionname, duedate)
+    let ntodo = new makeToDo(labelname.value, projectname, priority, descriptionname, duedate,done)
     todos.push(ntodo)
     console.log(JSON.stringify(todos))
     localStorage.setItem('todolist', JSON.stringify(todos) )
