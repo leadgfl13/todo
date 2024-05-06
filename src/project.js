@@ -150,6 +150,11 @@ function makeChanges(atodo){
     let formbox = document.createElement('div')
     formbox.setAttribute('id','editbox')
     let aform = document.createElement('div')
+    let canceledit = document.createElement('button')
+    canceledit.innerHTML = 'Cancel'
+    canceledit.addEventListener('click',()=>{
+        aform.style.display = 'none'
+    })
     let editradio = document.createElement('div')
     editradio.setAttribute('id','editradio')
     //test to add radio
@@ -279,7 +284,7 @@ editradio.append(lowlabel,lowinput, medlabel, medinput, highlabel, highinput)
 
     )
     formbox.append(aform)
-    aform.append(nameinput, editdescript,editdate, editradio, saveedit,completelabel,completecheck)
+    aform.append(nameinput, editdescript,editdate, editradio, saveedit,completelabel,completecheck,canceledit)
     document.body.append(aform)
 
 }
