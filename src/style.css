@@ -140,6 +140,31 @@ label{
     box-shadow: 2px 2px 2px 2px;
 }
 
+#complete{
+    font-family:'chalk';
+    font-size:12px;
+    background-image:url('../images/checked.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding:10px;
+    position:relative;
+    margin:10px;
+    padding-top:20px;
+    border-radius:14px;
+    border:6px solid black;
+    box-shadow:2px 2px 2px 2px;
+    justify-content:center;
+    align-items:center;
+    display:grid;
+   display:flex;
+   flex-direction:column;
+    height:200px;
+    gap:40px;
+    width:auto;
+    background-color:whitesmoke;
+    box-shadow: 2px 2px 2px 2px;
+}
+
 #todocard:hover{
     height:300px;
     z-index: 1;

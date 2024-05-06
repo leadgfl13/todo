@@ -75,7 +75,8 @@ function clearForm(){
     let descriptionname = document.getElementById('description').value
     let datevalue = (document.getElementById('date').value)
     let duedate = format(new Date(datevalue), "MM/dd/yyyy");
-    let ntodo = new makeToDo(labelname.value, projectname, priority, descriptionname, duedate,done)
+    let donevalue = 'false'
+    let ntodo = new makeToDo(labelname.value, projectname, priority, descriptionname, duedate,donevalue)
     todos.push(ntodo)
     console.log(JSON.stringify(todos))
     localStorage.setItem('todolist', JSON.stringify(todos) )

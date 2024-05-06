@@ -10,9 +10,13 @@ import { todosview } from './events'
 
 
 
-function completionCheck(atodo){
-atodo.done = true
-console.log(atodo.done)}
+//function completionCheck(atodo){
+
+//localStorage.setItem('todolist', JSON.stringify(todos) )
+//showTodos(atodo.project)
+
+
+//}
 
 export class makeProject{
 
@@ -33,14 +37,14 @@ export class makeProject{
 
      //makes todo's
 export class makeToDo{
-    constructor(name, project,priority, description, date,){
+    constructor(name, project,priority, description, date, done){
         this.name = name
         this.project = project
         this.priority = priority
         this.description = description
         this.date = date
-        this.done = false     }
-}
+        this.done = done
+}}
 
 // goes through the todo list and makes a card for each todo that matches the projectname
 export function showTodos(projectname){
@@ -65,14 +69,18 @@ export function showTodos(projectname){
 
 //makes a card to physically represent the todo
 function makeCard(atodo){
+   
+   
     
     let card = document.createElement('div')
     card.addEventListener('mouseenter',()=>{
         descriptdiv.style.display = 'block'
     })
+    
     card.addEventListener('mouseleave',()=>{
         descriptdiv.style.display = 'none'
     })
+    
     card.setAttribute('id','todocard')
     let todoname = document.createElement('div')
     todoname.innerHTML = atodo.name
@@ -84,6 +92,7 @@ function makeCard(atodo){
     tododate.innerHTML = "Due: " + atodo.date
 let remove = document.createElement('button')
 remove.setAttribute('id','removetodo')
+
 remove.addEventListener('click',()=>{
     for(let i = 0; i<todos.length; i++){
         if (todos[i].name == atodo.name){
@@ -103,34 +112,18 @@ remove.addEventListener('click',()=>{
     showTodos(atodo.project)
 
 })
-let completion = document.createElement('div')
-completion.setAttribute('id','completion')
-let completed = document.createElement('input')
-let completedlabel = document.createElement('label')
 
-Object.assign(completed, {
-    id: 'completion',
-    type: 'checkbox',
-    onclick: ()=>{completionCheck(atodo)}
-})
-Object.assign(completedlabel, {
-    innerHTML: 'Completed',
-    for: 'completion',
-})
-completion.append(completedlabel,completed)
 
-if(atodo.complete = true){
-    card.style.backgroundColor = 'maroon'
-        
-}
+
 //the edit button and its functionality
 let edit = document.createElement('button')
 edit.setAttribute('id', 'edit')
 edit.addEventListener('click',(e)=>{
+    onsubmit = "return false"
     e.preventDefault
     console.log("test")
     makeChanges(atodo)})
-    card.append(todoname, tododate,descriptdiv, remove, edit, completion)
+    card.append(todoname, tododate,descriptdiv, remove, edit)
 
     bottomright.append(card)
     if(atodo.priority == "low"){
@@ -144,16 +137,35 @@ edit.addEventListener('click',(e)=>{
         card.style.border = '4px solid red'
     }
 
+   console.log(atodo.done)
+    if(atodo.done == 'true'){
+        console.log("hello")
+        card.setAttribute('id', 'complete')
+    }
 }
 
 //Function to allow changes to the particular todo
 function makeChanges(atodo){
+
     let formbox = document.createElement('div')
     formbox.setAttribute('id','editbox')
     let aform = document.createElement('div')
     let editradio = document.createElement('div')
     editradio.setAttribute('id','editradio')
     //test to add radio
+    let completecheck = document.createElement('input')
+    Object.assign(completecheck,{
+        type:'checkbox',
+        id: 'completecheck'
+    })
+    let completelabel = document.createElement('label')
+    Object.assign(completelabel,{
+        for:completecheck,
+        id: 'completelabel',
+        innerHTML: "Completed"
+})
+  
+
     let lowlabel = document.createElement('label')
     let lowinput = document.createElement('input')
     Object.assign(lowlabel, {
@@ -203,9 +215,25 @@ editradio.append(lowlabel,lowinput, medlabel, medinput, highlabel, highinput)
     saveedit.innerHTML = 'Save changes'
     let editdate = document.createElement('input')
     editdate.setAttribute('placeholder', 'MM/DD/YY')
+    if(atodo.done =='true'){
+        completecheck.checked = true
+    }
+    if(atodo.done == 'false'){
+        completecheck.checked = false;
+    }
+
+
     
 
-    saveedit.addEventListener('click',()=>{
+    saveedit.addEventListener('click',(e)=>{
+       
+        if(completecheck.checked){
+            atodo.done = "true"
+        }
+        else{
+            atodo.done = "false"
+        }
+        
         if(nameinput.value == ''){
             atodo.name = atodo.name
         }
@@ -224,6 +252,7 @@ editradio.append(lowlabel,lowinput, medlabel, medinput, highlabel, highinput)
         else{
             atodo.date  = format(new Date(editdate.value), "MM/dd/yyyy");
         }
+        
         if(lowinput.value == '' ||medinput.value == ''  || highinput.value == ''){
             atodo.priority ==atodo.priority
         }
@@ -237,11 +266,20 @@ editradio.append(lowlabel,lowinput, medlabel, medinput, highlabel, highinput)
             if(highinput.checked ==true){
                 atodo.priority=highinput.value
                 }}
+       //resetting the values
+       localStorage.setItem('todolist', JSON.stringify(todos))
+
+       showTodos(atodo.project)
+       aform.style.display = 'none'
        
-       
-    } )
+
+       console.log('test')
+    } 
+    
+
+    )
     formbox.append(aform)
-    aform.append(nameinput, editdescript,editdate, editradio,saveedit)
+    aform.append(nameinput, editdescript,editdate, editradio, saveedit,completelabel,completecheck)
     document.body.append(aform)
 
 }
