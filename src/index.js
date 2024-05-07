@@ -35,8 +35,9 @@ addproject.addEventListener('click',()=>{
             newproject.addProject() //adds project to the array
             let projectsstring = JSON.stringify(newproject)
             localStorage.setItem('projectsstring',newproject)
-            console.log(newproject)
+            showTodos(newproject.name)
             showProjects()
+
     }
 })
 
@@ -44,8 +45,6 @@ addproject.addEventListener('click',()=>{
 
 
 
-
-showProjects()
 
 
 

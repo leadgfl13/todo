@@ -44,34 +44,20 @@ function showProjects(){
                 console.log(blanktodos[j].project + " matches " + projects[i].name)
                 todos.splice([j],1)
                 localStorage.setItem('todolist', JSON.stringify(todos))
-                }
-
-                }
-                
+                } }
                 showTodos(projects[0].name)
-            
             // deletes the project from the localstorage
-                
                     projects.splice(i,1)
                     removelist.splice(i,1)
                     localStorage.setItem('projectlist', JSON.stringify(projects))                 
                     showProjects()
-                
-                //use filter metho
-                
-                
-                
-
-
             }
             else{return}
         }
-        
-            )
-            
-        
+            ) 
     }}
 export{showProjects}
+
 
 let todobutton = document.getElementById('addtodo')
 todobutton.addEventListener('click',()=>{
