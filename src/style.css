@@ -7,8 +7,11 @@
     font-weight: 600;
     font-style: normal;
   }
+
+
   
   body{
+    height:auto;
     background-color:gray;
     margin:0px;
 }
@@ -68,7 +71,8 @@ align-items:center;}
 
 #pagelayout{
 
-    height:100vh;
+    min-height:100vh;
+    max-height: auto;
     width:100%;
     display:grid;
     grid-template-rows:15% 10% 75%;
