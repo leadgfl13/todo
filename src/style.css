@@ -165,6 +165,11 @@ label{
     box-shadow: 2px 2px 2px 2px;
 }
 
+#complete:hover{
+    height:300px;
+    z-index: 1;
+}
+
 #todocard:hover{
     height:300px;
     z-index: 1;
