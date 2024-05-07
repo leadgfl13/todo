@@ -100,8 +100,7 @@ align-items:center;}
     grid-template-rows: repeat(auto-fill, 210px);
     grid-template-columns: repeat(auto-fill, 210px);
     flex-direction:row;
-    gap:20px;
-    background-color:tan;
+    row-gap:60px;
 }
 
 #bottomleft{
