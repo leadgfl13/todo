@@ -11,8 +11,7 @@
 
   
   body{
-    height:auto;
-    background-color:gray;
+    height:100%;
     margin:0px;
 }
 
@@ -70,12 +69,11 @@ align-items:center;}
 
 
 #pagelayout{
-
     min-height:100vh;
-    max-height: auto;
+    max-height:auto;
     width:100%;
     display:grid;
-    grid-template-rows:15% 10% 75%;
+    grid-template-rows:150px 100px 100%;
     grid-template-columns:20% 80%;
     
 }
@@ -96,6 +94,7 @@ align-items:center;}
 }
 
 #bottomright{
+    min-height:100%;
     grid-area:3/2/3/4;
     display:grid;
     background-image:url('../images/corkboard.jpeg');
