@@ -69,13 +69,21 @@ cancel.addEventListener('click',(e)=>{
 
 //makes a todo object, adds it to the current project and then clears the form
 function clearForm(){
+    
     let labelname = document.getElementById('labelname')
-    let priority =  document.querySelector('input[name="priority"]:checked').value;
-    let projectname =  document.querySelector('input[name="project"]:checked').value;
+    if(!document.querySelector('input[name="priority"]:checked' || !document.querySelector('input[name="project"]:checked').value
+    || !document.getElementById('description').value) || !document.getElementById('date').value){
+        alert("Please fill out the form ")
+    }
+
+let priority =  document.querySelector('input[name="priority"]:checked').value;
+let projectname =  document.querySelector('input[name="project"]:checked').value;
     let descriptionname = document.getElementById('description').value
     let datevalue = (document.getElementById('date').value)
     let duedate = format(new Date(datevalue), "MM/dd/yyyy");
     let donevalue = 'false'
+    
+    
     let ntodo = new makeToDo(labelname.value, projectname, priority, descriptionname, duedate,donevalue)
     todos.push(ntodo)
     console.log(JSON.stringify(todos))

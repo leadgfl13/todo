@@ -92,6 +92,9 @@ align-items:center;}
     border-radius:10px;
     border: 2px black solid;
 }
+#project:hover{
+    background-color:yellow;
+}
 
 #bottomright{
     min-height:100%;
@@ -159,23 +162,25 @@ label{
     background-image:url('../images/checked.png');
     background-repeat: no-repeat;
     background-size:cover;
-    padding:10px;
     position:relative;
     margin:10px;
+    text-align:center;
+    padding-left:8px;
+    padding-right:8px;
     padding-top:20px;
     border-radius:14px;
     border:6px solid black;
     box-shadow:2px 2px 2px 2px;
     justify-content:center;
     align-items:center;
-    display:grid;
-   display:flex;
-   flex-direction:column;
+    display:flex;
+    flex-direction:column;
     height:200px;
     gap:40px;
     width:auto;
     background-color:whitesmoke;
     box-shadow: 2px 2px 2px 2px;
+    overflow: auto;
 }
 
 #complete:hover{
@@ -265,10 +270,10 @@ label{
     background-image:url('../images/edit.png');
     min-height:30px;
     width:30px;
-    
+}
 
-   
-
+#edit:hover{
+    background-color:green;
 }
 
 #completion{
@@ -377,6 +382,9 @@ input:active{
     color:white;
 
 }
+#addtodo:hover, #makeproject:hover{
+border-color: yellow;
+}
 
 #topright, #topleft{
 display:Flex;
@@ -409,11 +417,27 @@ align-items:center;
     gap: 10px;
 }
 
+button:hover, #saveedit:hover{
+    background-color:green;
+}
 #subtodo, #canceltodo, #saveedit, #canceledit{
     border-radius:5px;
     font-size:20px;
     box-shadow:1px 1px 1px 1px;
     border:1px dark blue solid;
     background-color:lightblue;
+}
+#canceledit:hover{
+    background-color: red;
+}
 
+#canceltodo:hover{
+    background-color:red;
+}
+#subtodo:hover{
+    background-color:green;
+}
+
+#canceledit:hover, #deleteproject:hover, #removetodo:hover{
+    background-color:red;
 }
