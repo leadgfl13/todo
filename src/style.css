@@ -97,7 +97,7 @@ align-items:center;}
     min-height:100%;
     grid-area:3/2/3/4;
     display:grid;
-    background-image:url('../images/corkboard.jpeg');
+    background-color:skyblue;
     background-repeat: no-repeat;
     background-size:cover;
     grid-template-rows: repeat(auto-fill, 210px);
@@ -142,6 +142,14 @@ label{
     background-color:whitesmoke;
     box-shadow: 2px 2px 2px 2px;
     overflow: auto;
+
+}
+#completioncontainer{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    flex-direction:row;
+    align-items: center;
 
 }
 
@@ -240,7 +248,14 @@ label{
     right:5px;
     
 }
-
+#editradio{
+    display:flex;
+    justify-content: center;
+    text-align:center;
+    flex-direction:row;
+    gap:8px;
+    margin:0px;
+}
 #edit{
     background-repeat: no-repeat;
     background-size:cover;
@@ -291,19 +306,26 @@ label{
     word-wrap: break-word;
 }
 
+#buttonholder{
+    display:flex;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;;
+}
+
 #editform{
+    padding:20px;
     margin:20px;
     padding-top:20px;
-
     background-image:url('../images/crumpled.jpeg');
     background-repeat: no-repeat;
     background-size:cover;
-    gap:5px;
+    gap:20px;
     position:absolute;
     top:40%;
     left:40%;
     font-size:16px;
-    gap:10px;
     height:auto;
     width:auto;
     box-shadow: 2px 2px 2px 2px;
@@ -387,7 +409,7 @@ align-items:center;
     gap: 10px;
 }
 
-#subtodo, #canceltodo, #saveedit{
+#subtodo, #canceltodo, #saveedit, #canceledit{
     border-radius:5px;
     font-size:20px;
     box-shadow:1px 1px 1px 1px;

@@ -151,12 +151,14 @@ function makeChanges(atodo){
     formbox.setAttribute('id','editbox')
     let aform = document.createElement('div')
     let canceledit = document.createElement('button')
+    canceledit.setAttribute('id','canceledit')
     canceledit.innerHTML = 'Cancel'
     canceledit.addEventListener('click',()=>{
         aform.style.display = 'none'
     })
     let editradio = document.createElement('div')
     editradio.setAttribute('id','editradio')
+    let completioncontainer = document.createElement('div')
     //test to add radio
     let completecheck = document.createElement('input')
     Object.assign(completecheck,{
@@ -169,7 +171,8 @@ function makeChanges(atodo){
         id: 'completelabel',
         innerHTML: "Completed"
 })
-  
+completioncontainer.setAttribute('id','completioncontainer')
+  completioncontainer.append(completelabel,completecheck)
 
     let lowlabel = document.createElement('label')
     let lowinput = document.createElement('input')
@@ -213,7 +216,7 @@ editradio.append(lowlabel,lowinput, medlabel, medinput, highlabel, highinput)
     aform.setAttribute('id','editform')  
  let nameinput = document.createElement('input')
     nameinput.setAttribute('placeholder', 'changename')
-    let editdescript = document.createElement('input')
+    let editdescript = document.createElement('textarea')
     editdescript.setAttribute('placeholder', 'Change description')
     let saveedit = document.createElement('button')
     saveedit.setAttribute('id', 'saveedit')
@@ -284,7 +287,11 @@ editradio.append(lowlabel,lowinput, medlabel, medinput, highlabel, highinput)
 
     )
     formbox.append(aform)
-    aform.append(nameinput, editdescript,editdate, editradio, saveedit,completelabel,completecheck,canceledit)
+
+    let buttonholder = document.createElement('div')
+    buttonholder.setAttribute('id','buttonholder')
+    buttonholder.append(saveedit,canceledit)
+    aform.append(nameinput, editdescript,editdate, editradio,completioncontainer,buttonholder)
     document.body.append(aform)
 
 }
