@@ -123,23 +123,26 @@ label{
     background-image:url('../images/stickynote3.png');
     background-repeat: no-repeat;
     background-size:cover;
-    padding:10px;
     position:relative;
     margin:10px;
+    text-align:center;
+    padding-left:8px;
+    padding-right:8px;
     padding-top:20px;
     border-radius:14px;
     border:6px solid black;
     box-shadow:2px 2px 2px 2px;
     justify-content:center;
     align-items:center;
-    display:grid;
-   display:flex;
-   flex-direction:column;
+    display:flex;
+    flex-direction:column;
     height:200px;
     gap:40px;
     width:auto;
     background-color:whitesmoke;
     box-shadow: 2px 2px 2px 2px;
+    overflow: auto;
+
 }
 
 #complete{
@@ -173,7 +176,10 @@ label{
 }
 
 #todocard:hover{
+    justify-content:start;
+    position:relative;
     height:300px;
+    overflow: auto;
     z-index: 1;
 }
 
@@ -236,14 +242,18 @@ label{
 }
 
 #edit{
-    background-image:url('../images/edit.png');
     background-repeat: no-repeat;
     background-size:cover;
-    height:30px;
+    position:sticky;
+    bottom:10px;
+    left:148px;
+    background-image:url('../images/edit.png');
+    min-height:30px;
     width:30px;
-    position:absolute;
-    bottom:5px;
-    right:5px;
+    
+
+   
+
 }
 
 #completion{
@@ -278,6 +288,7 @@ label{
     text-decoration:underline;
     font-size:auto;
     text-align:center;
+    word-wrap: break-word;
 }
 
 #editform{
