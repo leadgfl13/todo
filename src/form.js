@@ -71,6 +71,8 @@ cancel.addEventListener('click',(e)=>{
 function clearForm(){
     
     let labelname = document.getElementById('labelname')
+    //if statement throws an alert if the form isn't filled out
+    
     if(!document.querySelector('input[name="priority"]:checked' || !document.querySelector('input[name="project"]:checked').value
     || !document.getElementById('description').value) || !document.getElementById('date').value){
         alert("Please fill out the form ")
