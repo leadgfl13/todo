@@ -395,6 +395,7 @@ input:active{
 }
 #addtodo:hover, #makeproject:hover{
 border-color: yellow;
+animation:bounce 0.5s;
 }
 
 #topright, #topleft{
