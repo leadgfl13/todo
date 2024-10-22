@@ -1,466 +1,445 @@
-
-
 @font-face {
-    font-family: 'chalk';
-    src: url('./chalk.otf') format('woff2'),
-      url('./chalk.otf') format('woff');
-    font-weight: 600;
-    font-style: normal;
-  }
-
-
-  
-  body{
-    height:100%;
-    margin:0px;
-    background-color:gray;
+	font-family: "chalk";
+	src: url("./chalk.otf") format("woff2"), url("./chalk.otf") format("woff");
+	font-weight: 600;
+	font-style: normal;
 }
 
-
-button:active{
-background-image:url(../images/meme.jpeg);
-background-size:contain;
-background-position:center;
-background-repeat: no-repeat;
+body {
+	height: 100%;
+	margin: 0px;
+	background-color: gray;
 }
 
-.inputfield{
-    display:flex;
-    flex-direction:row;
-    justify-content: space-between;
-
+button:active {
+	background-color: green;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
-#checkboxfield{
-    gap:20px;
-}
-.checkfield{
-    display:flex;
-    gap:40px;
-    flex-direction:row;
-}
-#checkers{
-    text-align:center;
-    border-bottom:2px black solid;
-    border-top:2px black solid;
-
-}
-label{
-    padding-bottom:10px;
+.inputfield {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
-#legendlabel{
-    text-align:center;
-    margin-bottom:10px;
-border-bottom:2px black solid;
-border-top:2px black solid;
-
+#checkboxfield {
+	gap: 20px;
+}
+.checkfield {
+	display: flex;
+	gap: 40px;
+	flex-direction: row;
+}
+#checkers {
+	text-align: center;
+	border-bottom: 2px black solid;
+	border-top: 2px black solid;
+}
+label {
+	padding-bottom: 10px;
 }
 
-
-
-legend{
-    margin-bottom:10px;
-}
-#inputcontainer{
-    gap:10px;
-    display:flex;
-    flex-direction:row;
-    align-items:Center;
-}
-#descriptioncontainer{
-    display:Flex;
-    justify-content:center;
-    flex-direction:column;
-align-items:center;}
-
-
-
-#pagelayout{
-    min-height:100vh;
-    max-height:auto;
-    width:100%;
-    display:grid;
-    grid-template-rows:150px 100px 100%;
-    grid-template-columns:20% 80%;
-    
-}
-#makeproject{
-    height:100%;
-    width:100%;
-    grid-area:1/1/2/2;
-}
-#project{
-    grid-area:1/1/2/2;
-    font-family:'chalk';
-    height:40px;
-    width:100%;
-    font-size:20px;
-    background-color: skyblue;
-    border-radius:10px;
-    border: 2px black solid;
-}
-#project:hover{
-    background-color:yellow;
-    animation: infinite bounce 0.5s;
-    
-
+#legendlabel {
+	text-align: center;
+	margin-bottom: 10px;
+	border-bottom: 2px black solid;
+	border-top: 2px black solid;
 }
 
+legend {
+	margin-bottom: 10px;
+}
+#inputcontainer {
+	gap: 10px;
+	display: flex;
+	flex-direction: row;
+	align-items: Center;
+}
+#descriptioncontainer {
+	display: Flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
 
+#pagelayout {
+	min-height: 100vh;
+	max-height: auto;
+	width: 100%;
+	display: grid;
+	grid-template-rows: 150px 100px 100%;
+	grid-template-columns: 20% 80%;
+}
+#makeproject {
+	height: 100%;
+	width: 100%;
+	grid-area: 1/1/2/2;
+}
+#project {
+	grid-area: 1/1/2/2;
+	font-family: "chalk";
+	height: 40px;
+	width: 100%;
+	font-size: 20px;
+	background-color: skyblue;
+	border-radius: 10px;
+	border: 2px black solid;
+}
+#project:hover {
+	background-color: yellow;
+	animation: infinite bounce 0.5s;
+}
 
 @keyframes bounce {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 
-
-#bottomright{
-    min-height:100%;
-    grid-area:3/2/3/4;
-    display:grid;
-    background-color:skyblue;
-    background-repeat: no-repeat;
-    background-size:cover;
-    grid-template-rows: repeat(auto-fill, 210px);
-    grid-template-columns: repeat(auto-fill, 210px);
-    flex-direction:row;
-    row-gap:60px;
+#bottomright {
+	min-height: 100%;
+	grid-area: 3/2/3/4;
+	display: grid;
+	background-color: skyblue;
+	background-repeat: no-repeat;
+	background-size: cover;
+	grid-template-rows: repeat(auto-fill, 210px);
+	grid-template-columns: repeat(auto-fill, 210px);
+	flex-direction: row;
+	row-gap: 60px;
 }
 
-#bottomleft{
-    grid-area:2/1/4/2;
-    display:flex;
-    background-color: rgb(67, 99, 67);
-    flex-direction:column;
-    gap:10px;
-    border:8px groove rgba(197, 110, 39, 0.72);
+#bottomleft {
+	grid-area: 2/1/4/2;
+	display: flex;
+	background-color: rgb(67, 99, 67);
+	flex-direction: column;
+	gap: 10px;
+	border: 8px groove rgba(197, 110, 39, 0.72);
 }
-label{
-    text-align: center;;
+label {
+	text-align: center;
 }
-#todocard{
-    font-family:'chalk';
-    font-size:12px;
-    background-image:url('../images/stickynote3.png');
-    background-repeat: no-repeat;
-    background-size:cover;
-    position:relative;
-    margin:10px;
-    text-align:center;
-    padding-left:8px;
-    padding-right:8px;
-    padding-top:20px;
-    border-radius:14px;
-    border:6px solid black;
-    box-shadow:2px 2px 2px 2px;
-    justify-content:center;
-    align-items:center;
-    display:flex;
-    flex-direction:column;
-    height:200px;
-    gap:40px;
-    width:auto;
-    background-color:whitesmoke;
-    box-shadow: 2px 2px 2px 2px;
-    overflow: auto;
-
+#todocard {
+	font-family: "chalk";
+	font-size: 12px;
+	background-image: url("../images/stickynote3.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	margin: 10px;
+	text-align: center;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 20px;
+	border-radius: 14px;
+	border: 6px solid black;
+	box-shadow: 2px 2px 2px 2px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 200px;
+	gap: 40px;
+	width: auto;
+	background-color: whitesmoke;
+	box-shadow: 2px 2px 2px 2px;
+	overflow: auto;
 }
-#completioncontainer{
-    width:100%;
-    display:flex;
-    justify-content: center;
-    flex-direction:row;
-    align-items: center;
-
+#completioncontainer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
 }
 
-#complete{
-    font-family:'chalk';
-    font-size:12px;
-    background-image:url('../images/checked.png');
-    background-repeat: no-repeat;
-    background-size:cover;
-    position:relative;
-    margin:10px;
-    text-align:center;
-    padding-left:8px;
-    padding-right:8px;
-    padding-top:20px;
-    border-radius:14px;
-    border:6px solid black;
-    box-shadow:2px 2px 2px 2px;
-    justify-content:center;
-    align-items:center;
-    display:flex;
-    flex-direction:column;
-    height:200px;
-    gap:40px;
-    width:auto;
-    background-color:whitesmoke;
-    box-shadow: 2px 2px 2px 2px;
-    overflow: auto;
+#complete {
+	font-family: "chalk";
+	font-size: 12px;
+	background-image: url("../images/checked.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	margin: 10px;
+	text-align: center;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 20px;
+	border-radius: 14px;
+	border: 6px solid black;
+	box-shadow: 2px 2px 2px 2px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 200px;
+	gap: 40px;
+	width: auto;
+	background-color: whitesmoke;
+	box-shadow: 2px 2px 2px 2px;
+	overflow: auto;
 }
 
-#complete:hover{
-    height:300px;
-    z-index: 1;
+#complete:hover {
+	height: 300px;
+	z-index: 1;
 }
 
-#todocard:hover{
-    justify-content:start;
-    position:relative;
-    height:300px;
-    overflow: auto;
-    z-index: 1;
+#todocard:hover {
+	justify-content: start;
+	position: relative;
+	height: 300px;
+	overflow: auto;
+	z-index: 1;
 }
 
-#desdiv{
-    grid-area:3/1/4/2;
+#desdiv {
+	grid-area: 3/1/4/2;
 }
 
-#labelname{
-    text-align:center;
+#labelname {
+	text-align: center;
 }
 
-#forms{
-    background-image:url('../images/crumpled.jpeg');
-    background-repeat: no-repeat;
-    background-size:cover;
-    gap:10px;
-    border-radius:8px;
-    padding:10px;
-    box-shadow:2px 2px 2px 2px;
-    font-size:20px;
-    display:none;
-    flex-direction:column;
-    height:auto;
-    width:auto;
-    background-color:blanchedalmond;
-    position:absolute;
-    top:20%;
-    left:40%;
+#forms {
+	background-image: url("../images/crumpled.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	gap: 10px;
+	border-radius: 8px;
+	padding: 10px;
+	box-shadow: 2px 2px 2px 2px;
+	font-size: 20px;
+	display: none;
+	flex-direction: column;
+	height: auto;
+	width: auto;
+	background-color: blanchedalmond;
+	position: absolute;
+	top: 20%;
+	left: 40%;
 }
-#forms > button{
-    border-radius:10px;
-    height:10px; 
-
+#forms > button {
+	border-radius: 10px;
+	height: 10px;
 }
-#buttoncontainer{
-    display:flex;
-    flex-direction: row;
-    gap:10px;
-    margin:10px;
-
+#buttoncontainer {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	margin: 10px;
 }
 
-
-
-#desdiv{
-    display:none;
+#desdiv {
+	display: none;
 }
 
-
-#removetodo{
-    background-image:url('../images/delete.png');
-    background-repeat: no-repeat;
-    background-size:cover;
-    height:30px;
-    width:30px;
-    position:absolute;
-    top:5px;
-    right:5px;
-    
+#removetodo {
+	background-image: url("../images/delete.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
 }
-#editradio{
-    display:flex;
-    justify-content: center;
-    text-align:center;
-    flex-direction:row;
-    gap:8px;
-    margin:0px;
+#editradio {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-direction: row;
+	gap: 8px;
+	margin: 0px;
 }
-#edit{
-    background-repeat: no-repeat;
-    background-size:cover;
-    position:sticky;
-    bottom:10px;
-    left:148px;
-    background-image:url('../images/edit.png');
-    min-height:30px;
-    width:30px;
+#edit {
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: sticky;
+	bottom: 10px;
+	left: 148px;
+	background-image: url("../images/edit.png");
+	min-height: 30px;
+	width: 30px;
 }
 
-#edit:hover{
-    background-color:green;
+#edit:hover {
+	background-color: green;
 }
 
-#completion{
-    height:30px;
-    width:30px;
-    position:absolute;
-    top:5px;
-    left:5px;
+#completion {
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	top: 5px;
+	left: 5px;
 }
 
-
-
-
-#todoname{
-    font-weight:800;
-    font:bold;
-    text-decoration:underline;
-    font-size:auto;
-    font-size:18px;
-    text-align:center;
+#todoname {
+	font-weight: 800;
+	font: bold;
+	text-decoration: underline;
+	font-size: auto;
+	font-size: 18px;
+	text-align: center;
 }
-#tododoate{
-    font-weight: 900;
-    text-decoration:underline;
-    font-size:18px;
-    text-align:center;
-
+#tododoate {
+	font-weight: 900;
+	text-decoration: underline;
+	font-size: 18px;
+	text-align: center;
 }
-#descriptdiv{
-    font-weight:800;
-    font:bold;
-    text-decoration:underline;
-    font-size:auto;
-    text-align:center;
-    word-wrap: break-word;
+#descriptdiv {
+	font-weight: 800;
+	font: bold;
+	text-decoration: underline;
+	font-size: auto;
+	text-align: center;
+	word-wrap: break-word;
 }
 
-#buttonholder{
-    display:flex;
-    gap:20px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;;
+#buttonholder {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
 }
 
-#editform{
-    padding:20px;
-    margin:20px;
-    padding-top:20px;
-    background-image:url('../images/crumpled.jpeg');
-    background-repeat: no-repeat;
-    background-size:cover;
-    gap:20px;
-    position:absolute;
-    top:40%;
-    left:40%;
-    font-size:16px;
-    height:auto;
-    width:auto;
-    box-shadow: 2px 2px 2px 2px;
-    border-radius:8px;
-    border:solid light beige 4px;
-    display:flex;
-    flex-direction:column;
-    background-color:lightslategray;
+#editform {
+	padding: 20px;
+	margin: 20px;
+	padding-top: 20px;
+	background-image: url("../images/crumpled.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	gap: 20px;
+	position: absolute;
+	top: 40%;
+	left: 40%;
+	font-size: 16px;
+	height: auto;
+	width: auto;
+	box-shadow: 2px 2px 2px 2px;
+	border-radius: 8px;
+	border: solid light beige 4px;
+	display: flex;
+	flex-direction: column;
+	background-color: lightslategray;
 }
 
-input{
-    height:20px;
-    width:auto;
+input {
+	height: 20px;
+	width: auto;
 }
-input:active{
-    background-color: skyblue;
-
-}
-
-#container{
-    display:grid;
-    grid-template-rows:1fr;
-    grid-template-columns: 3fr 1fr;
-    height:40px;
-    width:auto;
-    font-size:18px;
+input:active {
+	background-color: skyblue;
 }
 
-
-
-#deleteproject{
-    grid-area:1/2/2/3;
-    background-image:url('../images/delete.png');
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position: center;
+#container {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 3fr 1fr;
+	height: 40px;
+	width: auto;
+	font-size: 18px;
 }
 
-#addtodo, #makeproject{
-    height:80%;
-    width:80%;
-    font-size:28px;;
-    position:center;
-    border-radius:20px;
-    margin:auto;
-    background-color:gray;
-    font-family:'chalk';
-    color:white;
-
-}
-#addtodo:hover, #makeproject:hover{
-border-color: yellow;
-animation:infinite bounce 0.5s;
+#deleteproject {
+	grid-area: 1/2/2/3;
+	background-image: url("../images/delete.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
 }
 
-#topright, #topleft{
-    background-color:black;
-display:Flex;
-justify-content:center;
-align-items:center;
-border:16px groove rgba(197, 110, 39, 0.72);
-
+#addtodo,
+#makeproject {
+	height: 80%;
+	width: 80%;
+	font-size: 28px;
+	position: center;
+	border-radius: 20px;
+	margin: auto;
+	background-color: gray;
+	font-family: "chalk";
+	color: white;
+}
+#addtodo:hover,
+#makeproject:hover {
+	border-color: yellow;
+	animation: infinite bounce 0.5s;
 }
 
-#bottomrightnotodo{
-    grid-area:2/2/3/3;
-    display:flex;
+#topright,
+#topleft {
+	background-color: black;
+	display: Flex;
+	justify-content: center;
+	align-items: center;
+	border: 16px groove rgba(197, 110, 39, 0.72);
 }
 
-#heading{ 
-    font-family:'chalk';
-    font-weight: 600;
-    grid-area:2/2/3/3;
-    margin-right:0px;
-    border:4px black solid;
-    text-align: center; 
-    background-color: rgb(67, 99, 67);
-    font-size:48px;
-    text-decoration: underline;
-   
-}
-#buttoncontainer{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:space-around;
-    gap: 10px;
+#bottomrightnotodo {
+	grid-area: 2/2/3/3;
+	display: flex;
 }
 
-button:hover, #saveedit:hover{
-    background-color:green;
+#heading {
+	font-family: "chalk";
+	font-weight: 600;
+	grid-area: 2/2/3/3;
+	margin-right: 0px;
+	border: 4px black solid;
+	text-align: center;
+	background-color: rgb(67, 99, 67);
+	font-size: 48px;
+	text-decoration: underline;
 }
-#subtodo, #canceltodo, #saveedit, #canceledit{
-    border-radius:5px;
-    font-size:20px;
-    box-shadow:1px 1px 1px 1px;
-    border:1px dark blue solid;
-    background-color:lightblue;
-}
-#canceledit:hover{
-    background-color: red;
-}
-
-#canceltodo:hover{
-    background-color:red;
-}
-#subtodo:hover{
-    background-color:green;
+#buttoncontainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	gap: 10px;
 }
 
-#canceledit:hover, #deleteproject:hover, #removetodo:hover{
-    background-color:red;
+button:hover,
+#saveedit:hover {
+	background-color: green;
+}
+#subtodo,
+#canceltodo,
+#saveedit,
+#canceledit {
+	border-radius: 5px;
+	font-size: 20px;
+	box-shadow: 1px 1px 1px 1px;
+	border: 1px dark blue solid;
+	background-color: lightblue;
+}
+#canceledit:hover {
+	background-color: red;
+}
+
+#canceltodo:hover {
+	background-color: red;
+}
+#subtodo:hover {
+	background-color: green;
+}
+
+#canceledit:hover,
+#deleteproject:hover,
+#removetodo:hover {
+	background-color: red;
 }
